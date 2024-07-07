@@ -7,6 +7,7 @@ class UserModel
     private $email;
     private $password;
     private $profile_image;
+    private $role;
     private $is_confirmed;
     private $is_active;
     private $is_login;
@@ -47,6 +48,14 @@ class UserModel
     public function getProfileImage()
     {
         return $this->profile_image;
+    }
+    public function setRole($role)
+    {
+        $this->role = $role;
+    }
+    public function getRole()
+    {
+        return $this->role;
     }
 
     public function setIsConfirmed($is_confirmed)
@@ -100,6 +109,7 @@ class UserModel
             "email" => $this->getEmail(),
             "password" => $this->getPassword(),
             "profile_image" => $this->getProfileImage(),
+            "role"=>$this->getRole(),
             "is_confirmed" => $this->getIsConfirmed(),
             "is_active" => $this->getIsActive(),
             "is_login" => $this->getIsLogin(),

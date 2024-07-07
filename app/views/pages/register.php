@@ -9,7 +9,7 @@
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
                         <form method="POST" class="register-form" id="register-form" action="<?php echo URLROOT; ?>/auth/register">
-                            
+                        <?php require APPROOT . '/views/components/auth_message.php'; ?>
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="name" id="name" placeholder="Your Name" required/>
@@ -21,7 +21,7 @@
                           
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Password" required/>
+                                <input type="password" name="password" id="pass" placeholder="Password" required/>
                                 <i class="mdi mdi-eye-off toggle-password" id="toggle-password"></i>
                              </div>
   
@@ -74,4 +74,4 @@
                 togglePassword.classList.add('mdi-eye-off');
             }
         });
-    </script>
+</script>

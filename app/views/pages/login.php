@@ -10,16 +10,18 @@
                 </div>
 
                 <div class="signin-form">
-                    <h2 class="form-title">Sign up</h2>
-                    <form method="POST" class="register-form" id="login-form">
+                    <h2 class="form-title">Login</h2>
+                    <form method="POST" class="register-form" id="login-form" action="<?php echo URLROOT; ?>/auth/login">
+                    <?php require APPROOT . '/views/components/auth_message.php'; ?>
                         <div class="form-group">
-                            <label for="your_name"><i class="fa-solid fa-user"></i></label>
-                            <input type="text" name="your_name" id="your_name" placeholder="Your Name" required/>
+                            <label for="email"><i class="fa-solid fa-envelope"></i></label>
+                            <input type="text" name="email" id="email" placeholder="Your Email" required/>
                         </div>
                         <div class="form-group">
-                            <label for="your_pass"><i class="fa-solid fa-lock"></i></label>
-                            <input type="password" name="your_pass" id="your_pass" placeholder="Password" required/>
-                        </div>
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="pass" placeholder="Password" required/>
+                                <i class="mdi mdi-eye-off toggle-password" id="toggle-password"></i>
+                             </div>
                         <div class="form-group">
                             <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
                             <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
@@ -42,3 +44,32 @@
     </section>
 </div>
 <?php require_once APPROOT . '/views/inc/footer.php' ?>
+<script>
+        const passwordInput = document.getElementById('pass');
+        const togglePassword = document.getElementById('toggle-password');
+        const showPasswordCheckbox = document.getElementById('show-password');
+
+        togglePassword.addEventListener('click', function () {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                togglePassword.classList.remove('mdi-eye-off');
+                togglePassword.classList.add('mdi-eye');
+            } else {
+                passwordInput.type = 'password';
+                togglePassword.classList.remove('mdi-eye');
+                togglePassword.classList.add('mdi-eye-off');
+            }
+        });
+
+        showPasswordCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+                passwordInput.type = 'text';
+                togglePassword.classList.remove('mdi-eye-off');
+                togglePassword.classList.add('mdi-eye');
+            } else {
+                passwordInput.type = 'password';
+                togglePassword.classList.remove('mdi-eye');
+                togglePassword.classList.add('mdi-eye-off');
+            }
+        });
+</script>

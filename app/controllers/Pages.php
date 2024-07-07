@@ -32,12 +32,13 @@ class Pages extends Controller
 
     public function dashboard()
     {
-        $income = $this->db->incomeTransition();
-        $expense = $this->db->expenseTransition();
-        $data = [
-            'income' => $income,
-            'expense' => $expense
-        ];
-        $this->view('pages/dashboard', $data);
+        // $income = $this->db->incomeTransition();
+        // $expense = $this->db->expenseTransition();
+        // $data = [
+        //     'income' => $income,
+        //     'expense' => $expense
+        // ];
+        // $this->view('pages/dashboard', $data);
+        $this->view('pages/dashboard');
     }
 }
