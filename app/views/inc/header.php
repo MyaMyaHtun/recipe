@@ -9,15 +9,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- bootstrap cdn -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 
     <!-- Material Design Icon -->
-    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css"> -->
+		
+		<!-- STYLE CSS -->
+	<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">
+    
 
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/fonts/material-icon/css/material-design-iconic-font.min.css">
-
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">
+    <link rel="stylesheet" href="<?php echo URLROOT;?>/fonts/linearicons/style.css">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="css/style.css">
     <title><?php echo SITENAME; ?></title>
 </head>
 <body>

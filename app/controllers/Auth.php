@@ -159,6 +159,8 @@ public function login()
 {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $email = $_POST['email'];
+        // echo ($email);
+        // exit;
         $password = base64_encode($_POST['password']); // Encode password for comparison
 
         $user = $this->db->columnFilter('users', 'email', $email);
@@ -171,11 +173,11 @@ public function login()
                 // Check the user role
                 if ($user['role'] == 1) {
                     // Admin user
-                    setMessage('success', 'Login successful ! Welcome to invoice admin dashboard.');
+                    setMessage('success', 'Login successful ! Welcome to recipe admin dashboard.');
                     redirect('dashboard/admin');
                 } elseif ($user['role'] == 0) {
                     // Regular user
-                    setMessage('success', 'Login successful ! Welcome to invoice.');
+                    setMessage('success', 'Login successful ! Welcome to recipe.');
                     redirect('pages/dashboard');
                 } else {
                     setMessage('error', 'Invalid user role!');
