@@ -8,7 +8,7 @@ class Core
     // URL method -/controller/method/params
 
     protected $currentController = "Pages";
-    protected $currentMethod = "index";
+    protected $currentMethod = "home";
     protected $params = [];
 
     public function __construct()

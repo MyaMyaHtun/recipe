@@ -5,24 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" href="<?php echo URLROOT; ?>/images/icons/invoice_logo.png ">
+    <link rel="icon" href="<?php echo URLROOT; ?>/images/food_4.png ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
 
-    <!-- bootstrap cdn -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 
-    <!-- Material Design Icon -->
-    <!-- <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css"> -->
-		
 		<!-- STYLE CSS -->
-	<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">
+    <!-- <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/main.css"> -->
+	 <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">
+   <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/index.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/header.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/mobile.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/footer.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/head.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/dishes.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/explore.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/home.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/boot.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/contact.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/detail.css">
+    <!-- <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/category.css"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     
 
     <link rel="stylesheet" href="<?php echo URLROOT;?>/fonts/linearicons/style.css">
 		
-		<!-- STYLE CSS -->
-		<link rel="stylesheet" href="css/style.css">
+
     <title><?php echo SITENAME; ?></title>
 </head>
 <body>
+  <div>
 

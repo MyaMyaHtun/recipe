@@ -9,11 +9,22 @@ class dashboard extends Controller
 
     public function admin()
     {
-        $this->view('admin/dashboard');
+        $totalFoods= $this->db->getTotalCount('foods');
+        $totalCategories = $this->db->getTotalCount('categories');
+        $totalUsers = $this->db->getTotalCount("users");
+        $totalCuisines = $this->db->getTotalCount("cuisines");
+    
+            $data = [
+                'totalFoods' => $totalFoods,
+                'totalCategories' => $totalCategories,
+                'totalUsers' => $totalUsers,
+                'totalCuisines' => $totalCuisines,
+            ];
+        $this->view('admin/dashboard', $data);
 
     }
     public function logout(){
-        $this->view('pages/login');
+        $this->view('pages/index');
     }
 
 }

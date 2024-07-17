@@ -14,6 +14,15 @@ class Pages extends Controller
         // exit;
         $this->view('pages/login');
     }
+    public function home()
+    {
+        $this->view('pages/index');
+    }
+
+    public function category()
+    {
+        $this->view('pages/category');
+    }
 
     public function login()
     {
@@ -25,10 +34,21 @@ class Pages extends Controller
         $this->view('pages/register');
     }
 
+    public function contact()
+    {
+        $this->view('pages/contact');
+    }
+    public function detail()
+    {
+        $this->view('pages/details/detail');
+    }
+
     public function about()
     {
         $this->view('pages/about');
     }
+
+
 
     public function dashboard()
     {
@@ -40,5 +60,11 @@ class Pages extends Controller
         // ];
         // $this->view('pages/dashboard', $data);
         $this->view('pages/dashboard');
+        
     }
+    public function cuisine()
+    {
+        $this->view('pages/cuisine');
+    }
+    
 }

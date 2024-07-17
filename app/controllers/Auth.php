@@ -113,7 +113,7 @@ class Auth extends Controller
             setMessage('error', 'Incrorrect Token . Please try again!');
         }
 
-        redirect('pages/dashboard');
+        redirect('pages/login');
     }
 
 

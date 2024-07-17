@@ -182,44 +182,17 @@ class Database
     }
 
     // For Dashboard
-    public function incomeTransition()
+    public function getTotalCount($table)
     {
-       try{
-
-           $sql        = "SELECT *,SUM(amount) AS amount FROM incomes WHERE
-           (date = { fn CURDATE() }) ";
-           $stm = $this->pdo->prepare($sql);
-           $success = $stm->execute();
-
-           $row     = $stm->fetch(PDO::FETCH_ASSOC);
-           return ($success) ? $row : [];
-
-        }
-        catch( Exception $e)
-        {
-            echo($e);
-        }
+        $sql = 'SELECT COUNT(*) as total FROM ' . $table;
+        $stm = $this->pdo->prepare($sql);
+        $stm->execute();
+        $result = $stm->fetch(PDO::FETCH_ASSOC);
+ 
      
+        return $result['total'];
     }
 
-    public function expenseTransition()
-    {
-       try{
 
-           $sql        = "SELECT * ,SUM(amount*qty) AS amount FROM expenses WHERE
-           (date = { fn CURDATE() }) ";
-           $stm = $this->pdo->prepare($sql);
-           $success = $stm->execute();
-
-           $row     = $stm->fetch(PDO::FETCH_ASSOC);
-           return ($success) ? $row : [];
-
-        }
-        catch( Exception $e)
-        {
-            echo($e);
-        }
-     
-    }
 }
 
