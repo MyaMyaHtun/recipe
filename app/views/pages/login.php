@@ -1,4 +1,8 @@
 <?php require_once APPROOT . '/views/inc/header.php' ?>
+<?php require_once APPROOT . '/views/inc/nav.php' ?>
+
+<!-- Login form HTML here -->
+
 <div class="wrapper">
 				<div class="inner">
 					<img src="<?php echo URLROOT; ?>/images/image-1.png" alt="" class="image-1">
@@ -26,3 +30,5 @@
 				</div>
 				
 	</div>
+
+	<?php require_once APPROOT . '/views/inc/footer.php' ?>

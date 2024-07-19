@@ -79,7 +79,7 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data['totalCuisines'] ?></div>
                             </div>
                             <div class="col-auto">
-                                <i class="fa-solid fa-user fa-2x text-gray-300"></i>
+                                <i class="fa fa-utensils fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,5 @@
-<?php 
+<?php
+require_once APPROOT . '/views/inc/header.php';
 class CategoryController extends Controller
 {
     private $db;
@@ -10,6 +11,24 @@ class CategoryController extends Controller
         $this->db = new Database();
     }
        
+    public function viewDetail(){
+        $userId = isset($_SESSION['user_id']); 
+       
+        if(isset($_GET['id'])){
+            $recipe = $this->db->readById('view_foods', $_GET['id']);
+            $data = ["userId" => $userId, "foodId" => $recipe['id']];
+            $is_saved = $this->db->filterByMultipleColumns('save_recipe',$data);
+        }
+        // 
+        // 
+    
+        $data = [
+            'recipe' => $recipe,
+            'is_saved' => $is_saved,
+            'user_id' => $userId 
+        ];
+        $this->view('pages/details/detail',$data);
+    }
 
     public function index(){
         $categories = $this->db->readAll('categories');
@@ -24,24 +43,75 @@ class CategoryController extends Controller
     }
      
 
-    public function store(){
-        if($_SERVER['REQUEST_METHOD']=='POST'){
+    // public function store(){
+    //     if($_SERVER['REQUEST_METHOD']=='POST'){
            
+    //         $name = $_POST['name'];
+
+    //         if (empty($name)){
+    //             $error = "Field is required";
+    //             setMessage('error', $error);
+    //             redirect('categoryController/create');
+    //         }else{
+    //             $category = $this->db->columnFilter('categories', 'name', $name);
+    //             if($category){
+    //                 setMessage('error', 'Category already exits');
+    //                 redirect('categoryController/creat');
+    //             }else{
+    //                 $category = new CategoryModel();
+    //         $category->setName($name);
+    //         $category->setDate(date('Y-m-d H:i:s'));
+        
+    //         $categoryCreated = $this->db->create('categories',$category->toArray());
+         
+    //        if(!$categoryCreated){
+    //         setMessage('error', 'Fail to added category!');
+    //         redirect('categoryController/index');
+    //        }else{
+    //         setMessage('success', 'Add category successful!');
+    //         redirect('categoryController/index');
+    //        }
+
+    //             }
+    //         }    
+            
+    //     }
+    // }
+
+
+    public function store() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $name = $_POST['name'];
             
-            $category = new CategoryModel();
-            $category->setName($name);
-            $category->setDate(date('Y-m-d H:i:s'));
-        
-            $categoryCreated = $this->db->create('categories',$category->toArray());
-         
-           if(!$categoryCreated){
-            setMessage('error', 'Fail to added category!');
-            redirect('categoryController/index');
-           }else{
-            setMessage('success', 'Add category successful!');
-            redirect('categoryController/index');
-           }
+            if (empty($name)) {
+                $error = 'Field is required';
+                // Display the error message
+                setMessage('error', $error);
+                redirect('categoryController/create');
+            } else {
+                // Check if category already exists using LIKE
+                $category = $this->db->columnFilter('categories', 'name' ,$name );
+    
+                if ($category) {
+                    // If category exists, display an error message
+                    setMessage('error', 'Category already exists');
+                    redirect('categoryController/create');
+                } else {
+                    // Create new category
+                    $category = new CategoryModel();
+                    $category->setName($name);
+                    $category->setDate(date('Y-m-d H:i:s'));
+                    $categoryCreated = $this->db->create('categories', $category->toArray());
+    
+                    if ($categoryCreated) {
+                        setMessage('success', 'Category Created Successfully');
+                        redirect('categoryController/index');
+                    } else {
+                        setMessage('error', 'Failed to Create Category');
+                        redirect('categoryController/create');
+                    }
+                }
+            }
         }
     }
 

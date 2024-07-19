@@ -18,7 +18,7 @@
                     type="text"
                     class="form-control"
                     placeholder="Enter your category"
-                    name="name" required
+                    name="name"
                   />
                 </div>
                 <div class="btn_box">

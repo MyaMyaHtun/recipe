@@ -12,7 +12,7 @@
 
         <p>Even if you are a beginner or an expert, just explore beautiful recipes here!</p>
 
-        <div class="get-started">Get Started <i class="fa fa-chevron-right"></i></div>
+        <div class="get-started"><a href="<?php echo URLROOT; ?>/pages/dashboard">Get Started </a><i class="fa fa-chevron-right"></i></div>
       </div>
 
       <div class="right col-lg-6">
@@ -34,10 +34,9 @@
           <div class="home-info-section-inner-title"><h3>Easy</h3></div>
 
           <div class="home-info-section-inner-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Mollitia, molestiae necessitatibus. Voluptas architecto, earum aut perferendis 
-            temporibus adipisci, odit id amet laborum eum quibusdam autem quaerat odio esse 
-            iste blanditiis!
+          Discover Easy Recipes: Effortless Dishes for Every Occasion
+          The simplicity and accessibility of the recipes featured on the website. It suggests that users will find straightforward and hassle-free cooking solutions suitable for various occasions,
+
           </div>
         </div>
       </div>
@@ -49,10 +48,7 @@
           <div class="home-info-section-inner-title"><h3>Quick</h3></div>
 
           <div class="home-info-section-inner-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Mollitia, molestiae necessitatibus. Voluptas architecto, earum aut perferendis 
-            temporibus adipisci, odit id amet laborum eum quibusdam autem quaerat odio esse 
-            iste blanditiis!
+          To explore a collection of recipes that are convenient and straightforward, perfect for those looking to prepare delicious meals without spending too much time in the kitchen. It highlights the ease and efficiency of the recipes, appealing to individuals seeking quick cooking solutions.
           </div>
         </div>
       </div>
@@ -64,10 +60,7 @@
           <div class="home-info-section-inner-title"><h3>Tasty</h3></div>
 
           <div class="home-info-section-inner-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Mollitia, molestiae necessitatibus. Voluptas architecto, earum aut perferendis 
-            temporibus adipisci, odit id amet laborum eum quibusdam autem quaerat odio esse 
-            iste blanditiis!
+          Highlights the delicious and appetizing nature of the recipes featured on the website. It suggests that users will find a variety of flavorful dishes that cater to different tastes and preferences, promising a culinary journey filled with mouthwatering delights and satisfying flavors.
           </div>
         </div>
       </div>
@@ -87,12 +80,12 @@
 
           <div class="home-info-section-inner-title"><h4>Pizza</h4></div>
 
-          <div class="home-info-section-inner-text">
+          <!-- <div class="home-info-section-inner-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Mollitia, molestiae necessitatibus. Voluptas architecto, earum aut perferendis 
             temporibus adipisci, odit id amet laborum eum quibusdam autem quaerat odio esse 
             iste blanditiis!
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -102,12 +95,12 @@
           
           <div class="home-info-section-inner-title"><h4>Mango Smoothie</h4></div>
 
-          <div class="home-info-section-inner-text">
+          <!-- <div class="home-info-section-inner-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Mollitia, molestiae necessitatibus. Voluptas architecto, earum aut perferendis 
             temporibus adipisci, odit id amet laborum eum quibusdam autem quaerat odio esse 
             iste blanditiis!
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -117,12 +110,12 @@
 
           <div class="home-info-section-inner-title"><h4>Cheese Sandwich</h4></div>
 
-          <div class="home-info-section-inner-text">
+          <!-- <div class="home-info-section-inner-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Mollitia, molestiae necessitatibus. Voluptas architecto, earum aut perferendis 
             temporibus adipisci, odit id amet laborum eum quibusdam autem quaerat odio esse 
             iste blanditiis!
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

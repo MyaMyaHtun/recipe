@@ -38,6 +38,7 @@ class Pages extends Controller
     {
         $this->view('pages/contact');
     }
+    
     public function detail()
     {
         $this->view('pages/details/detail');
@@ -47,6 +48,17 @@ class Pages extends Controller
     {
         $this->view('pages/about');
     }
+
+    public function logout()
+    {
+        $this->view('pages/logout');
+    }
+
+    public function save()
+    {
+        $this->view('pages/save-recipe');
+    }
+
 
 
 

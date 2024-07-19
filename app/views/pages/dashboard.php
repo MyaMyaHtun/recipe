@@ -3,242 +3,165 @@
 <?php require APPROOT . '/views/components/auth_message.php'; ?>
 
 <?php require_once APPROOT . '/views/inc/nav.php' ?>
+<?php $database = new Database(); ?>
+<?php $foods = $database->readAll('view_foods') ?>
 
     <!-- header -->
     <div class="head">
         <h1>Welcome my Recipe Website</h1>
-        <p>
-            Lorem ipsum dolor sit  adipisicing elit. Optio iusto omnis, pariatur similique, itaque non exercitationem aliquid veritatis ad reiciendis maxime facilis!
-        </p>
+       
      </div>
     <!-- header -->
 
     <!-- Explore Menu Section -->
     <div class="explore-menu">
         <h1>Explore our categories</h1>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga ad neque illum dicta nobis quisquam. Doloribus, perspiciatis! Porro sequi harum autem architecto!
-        </p>
-        <div class="scroll-view">
-            <div class="item">
-                <img src="<?php echo URLROOT; ?>/images/menu_1.png" alt="">
-                <p>Salad</p>
+        <span width="100%">
+        Explore our categories to uncover a world of culinary delights. From savory appetizers to decadent desserts, each category offers a diverse array of recipes to satisfy every craving and occasion. Whether you're a seasoned chef or a novice cook, our curated collection ensures there's something delicious waiting for you to discover and recreate in your kitchen.
+        <span/>
+        
+                    <div class="scroll-view">
+                <?php foreach($foods as $food){ ?>
+                <div class="item">
+                    <div>
+                        <img src="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile'] ?>" class="custom" alt="Food Image">
+                        <p><?php echo $food['name']?></p>
+                    </div>
+                </div>
+                <?php } ?>
             </div>
-            <div class="item">
-                <img src="<?php echo URLROOT; ?>/images/menu_2.png" alt="">
-                <p>Salad</p>
-            </div>
-            <div class="item">
-                <img src="<?php echo URLROOT; ?>/images/menu_3.png" alt="">
-                <p>Salad</p>
-            </div>
-            <div class="item">
-                <img src="<?php echo URLROOT; ?>/images/menu_4.png" alt="">
-                <p>Salad</p>
-            </div>
-            <div class="item">
-                <img src="<?php echo URLROOT; ?>/images/menu_5.png" alt="">
-                <p>Salad</p>
-            </div>
-            <div class="item">
-                <img src="<?php echo URLROOT; ?>/images/menu_6.png" alt="">
-                <p>Salad</p>
-            </div>
-            <div class="item">
-                <img src="<?php echo URLROOT; ?>/images/menu_7.png" alt="">
-                <p>Salad</p>
-            </div>
-            <div class="item">
-                <img src="<?php echo URLROOT; ?>/images/menu_8.png" alt="">
-                <p>Salad</p>
-            </div>
-        </div>
-    </div>
     <!-- Explore Menu Section -->
+            <?php
+                shuffle($foods);
 
+                // Limit the array to the first four items
+                $foods = array_slice($foods, 0, 8);
+            ?>
 
+<?php
+// Define $loggedIn based on your login state logic
+$loggedIn = isset($_SESSION['user_id']); // Adjust this according to your session setup
+?>
     <!-- Top Dishes Near You -->
-    <div class="top-dishes">
-        <h1>Top dishes near you</h1>
-        <div class="grid">
-            <div class="item">
-                <div class="images">
-                    <img class="food-img" src="<?php echo URLROOT; ?>/images/food_1.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="flex">
-                        <p>Greed Salad</p>
+    <div class="container my-5">
+    <h1 class="mb-4">Top dishes near you</h1>
+    <div class="row">
+        <?php foreach($foods as $food){ ?>
+            <div class="col-md-3">
+            <!-- <a href="<?php echo URLROOT; ?>//pages/detail?id=<?php echo $food['id']; ?>" class="text-decoration-none"> -->
+                <div class="card mb-4 custom-card">
+                    <img src="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile'] ?>" class="card-img-top custom-img" alt="Food Image">
+                    <!-- <div class="fav-icon">
+                    <i class="fas fa-heart"></i>
+                </div> -->
+                <div class="fav-icon">
+                        <?php if ($loggedIn) { ?>
+                            <i class="fas fa-heart" style="color: red;"></i>
+                        <?php } else { ?>
+                            <a href="<?php echo URLROOT; ?>/pages/login">
+                                <i class="fas fa-heart" style="color: red;"></i>
+                            </a>
+                        <?php } ?>
                     </div>
-                    <p>Lorem ipsum dolor sit  adipisicing elit. Beatae, a iusto!</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="images">
-                    <img class="food-img" src="<?php echo URLROOT; ?>/images/food_2.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="flex">
-                        <p>Greed Salad</p>
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $food['name'] ?></h5>
+                        <p class="card-text custom-text"><?php echo $food['description'] ?></p>
                     </div>
-                    <p>Lorem ipsum dolor sit  adipisicing elit. Beatae, a iusto!</p>
                 </div>
+                <!-- </a> -->
             </div>
-            <div class="item">
-                <div class="images">
-                    <img class="food-img" src="<?php echo URLROOT; ?>/images/food_3.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="flex">
-                        <p>Greed Salad</p>
-                    </div>
-                    <p>Lorem ipsum dolor sit  adipisicing elit. Beatae, a iusto!</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="images">
-                    <img class="food-img" src="<?php echo URLROOT; ?>/images/food_4.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="flex">
-                        <p>Greed Salad</p>
-                    </div>
-                    <p>Lorem ipsum dolor sit  adipisicing elit. Beatae, a iusto!</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="images">
-                    <img class="food-img" src="<?php echo URLROOT; ?>/images/food_5.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="flex">
-                        <p>Greed Salad</p>
-                    </div>
-                    <p>Lorem ipsum dolor sit  adipisicing elit. Beatae, a iusto!</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="images">
-                    <img class="food-img" src="<?php echo URLROOT; ?>/images/food_6.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="flex">
-                        <p>Greed Salad</p>
-                    </div>
-                    <p>Lorem ipsum dolor sit  adipisicing elit. Beatae, a iusto!</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="images">
-                    <img class="food-img" src="<?php echo URLROOT; ?>/images/food_7.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="flex">
-                        <p>Greed Salad</p>
-                    </div>
-                    <p>Lorem ipsum dolor sit  adipisicing elit. Beatae, a iusto!</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="images">
-                    <img class="food-img" src="<?php echo URLROOT; ?>/images/food_8.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="flex">
-                        <p>Greed Salad</p>
-                    </div>
-                    <p>Lorem ipsum dolor sit  adipisicing elit. Beatae, a iusto!</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="images">
-                    <img class="food-img" src="<?php echo URLROOT; ?>/images/food_9.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="flex">
-                        <p>Greed Salad</p>
-                    </div>
-                    <p>Lorem ipsum dolor sit  adipisicing elit. Beatae, a iusto!</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="images">
-                    <img class="food-img" src="<?php echo URLROOT; ?>/images/food_10.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="flex">
-                        <p>Greed Salad</p>
-                    </div>
-                    <p>Lorem ipsum dolor sit  adipisicing elit. Beatae, a iusto!</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="images">
-                    <img class="food-img" src="<?php echo URLROOT; ?>/images/food_11.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="flex">
-                        <p>Greed Salad</p>
-                    </div>
-                    <p>Lorem ipsum dolor sit  adipisicing elit. Beatae, a iusto!</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="images">
-                    <img class="food-img" src="<?php echo URLROOT; ?>/images/food_12.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="flex">
-                        <p>Greed Salad</p>
-                    </div>
-                    <p>Lorem ipsum dolor sit  adipisicing elit. Beatae, a iusto!</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="images">
-                    <img class="food-img" src="<?php echo URLROOT; ?>/images/food_13.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="flex">
-                        <p>Greed Salad</p>
-                    </div>
-                    <p>Lorem ipsum dolor sit  adipisicing elit. Beatae, a iusto!</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="images">
-                    <img class="food-img" src="<?php echo URLROOT; ?>/images/food_14.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="flex">
-                        <p>Greed Salad</p>
-                    </div>
-                    <p>Lorem ipsum dolor sit  adipisicing elit. Beatae, a iusto!</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="images">
-                    <img class="food-img" src="<?php echo URLROOT; ?>/images/food_15.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="flex">
-                        <p>Greed Salad</p>
-                    </div>
-                    <p>Lorem ipsum dolor sit  adipisicing elit. Beatae, a iusto!</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="images">
-                    <img class="food-img" src="<?php echo URLROOT; ?>/images/food_16.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="flex">
-                        <p>Greed Salad</p>
-                    </div>
-                    <p>Lorem ipsum dolor sit  adipisicing elit. Beatae, a iusto!</p>
-                </div>
-            </div>
-        </div>
-     </div>
-    <!-- Top Dishes Near You -->
+        <?php } ?>
+    </div>
+</div>
 
-    <?php require_once APPROOT . '/views/inc/footer.php' ?>
+
+
+ <?php require_once APPROOT . '/views/inc/footer.php' ?>
+
+ <style>
+  .custom-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-img {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.custom-text {
+    height: 100px; /* Adjust height as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+}
+.scroll-view {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+}
+
+.item {
+    flex: 0 0 auto;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.custom {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.item p {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.custom-card {
+    position: relative;
+}
+
+.fav-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red; /* Change this to any color you like */
+    font-size: 24px; /* Adjust the size as needed */
+    z-index: 10;
+    background-color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+@keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            animation: fadeIn 2s ease-in-out;
+        }
+ </style>
+

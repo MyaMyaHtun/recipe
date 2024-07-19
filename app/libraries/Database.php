@@ -193,6 +193,64 @@ class Database
         return $result['total'];
     }
 
+     // Method to read a record by ID
+     public function readById($table, $id) {
+        try {
+            $query = "SELECT * FROM $table WHERE id = :id";
+            $stmt = $this->pdo->prepare($query);
+            $stmt->bindValue(':id', $id);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch(PDOException $e) {
+            // Handle errors gracefully, e.g., log or return false
+            return false;
+        }
+    }
+
+    public function filterByMultipleColumns($table, $conditions)
+    {
+        // Initialize the SQL query
+        $sql = 'SELECT * FROM ' . $table . ' WHERE ';
+        
+        // Create an array to hold the column-value pairs for the SQL query
+        $clauses = [];
+        $parameters = [];
+
+        // Loop through the conditions array to build the SQL query dynamically
+        foreach ($conditions as $column => $value) {
+            // Skip empty values
+            if (empty($value)) {
+                continue;
+            }
+            
+            $column = str_replace('`', '', $column); // Remove any backticks from column names
+            $clauses[] = "`$column` = :$column";
+            $parameters[":$column"] = $value;
+        }
+
+        // Join the clauses with 'AND' to form the final WHERE clause
+        if (empty($clauses)) {
+            return []; // Return empty array if no conditions
+        }
+        
+        $sql .= implode(' AND ', $clauses);
+
+        // Prepare and execute the SQL statement
+        $stm = $this->pdo->prepare($sql);
+
+        // Bind the values dynamically
+        foreach ($parameters as $param => $value) {
+            $stm->bindValue($param, $value);
+        }
+
+        // Execute the statement and fetch all results
+        $success = $stm->execute();
+        $row = $stm->fetch(PDO::FETCH_ASSOC);
+        
+        // Return the results
+        return ($success) ? $row : [];
+    }
+
 
 }
 

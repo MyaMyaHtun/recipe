@@ -1,8 +1,7 @@
 <?php require_once APPROOT . '/views/inc/header.php' ?>
 <?php require_once APPROOT . '/views/inc/nav.php' ?>
 
-
-    <div class="content">
+<div class="content">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-10">
@@ -85,13 +84,6 @@
         </div>
       </div>
     </div>
-  
-
-
-
-
-
-
 
 
 <?php require_once APPROOT . '/views/inc/footer.php' ?>

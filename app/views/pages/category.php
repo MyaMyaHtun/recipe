@@ -2,8 +2,10 @@
 <?php require APPROOT . '/views/components/auth_message.php'; ?>
 
 <?php require_once APPROOT . '/views/inc/nav.php' ?>
+<?php $database = new Database(); ?>
+<?php $foods = $database->readAll('view_foods') ?>
 
-<!-- Events Start -->
+<!-- category Start -->
 <div class="container-fluid event py-6">
       <div class="container">
         <div class="text-center wow bounceInUp" data-wow-delay="0.1s" >
@@ -11,9 +13,6 @@
             class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3" 
             >Latest Categories</small
           >
-          <!-- <h1 class="display-5 mb-5" style="color:#ff7433">
-            Our Categories
-          </h1> -->
         </div>
         <div class="tab-class text-center">
           <ul
@@ -58,360 +57,148 @@
             </li>
           </ul>
           <div class="tab-content">
-            <div id="tab-1" class="tab-pane fade show p-0 active">
-              <div class="row g-4">
-                <div class="col-lg-12">
-                  <div class="row g-4">
-                    <div
-                      class="col-md-6 col-lg-3 wow bounceInUp"
-                      data-wow-delay="0.1s"
-                    >
-                      <div class="event-img position-relative">
-                        <a href="<?php echo URLROOT; ?>/pages/detail">
-                        <img
-                          class="img-fluid rounded w-100"
-                          src="<?php echo URLROOT; ?>/images/food_1.png"
-                          alt=""
-                        />
-                        </a>
-                        <div class="event-overlay d-flex flex-column p-4">
-                          <h4 class="me-auto">Breakfast</h4>
-                          <!-- <a
-                            href="<?php echo URLROOT; ?>/images/food_2.png"
-                            data-lightbox="event-1"
-                            class="my-auto"
-                            ><i class="fas fa-search-plus text-dark fa-2x"></i
-                          ></a> -->
+          <div id="tab-1" class="tab-pane fade show p-0 active">
+                <div class="row g-4">
+                    <div class="col-lg-12">
+                        <div class="row g-4">
+                            <?php foreach($foods as $food){ ?>
+                            <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.1s">
+                                <div class="event-img position-relative">
+                                    <img class="img-fluid rounded custom-img" src="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile']; ?>" alt="Food Image" />
+                                    <div class="event-overlay d-flex flex-column p-4">
+                                        <h4 class="me-auto"><?php echo $food['category_name']; ?></h4>
+                                    </div>
+                                </div>
+                                <div class="view-detail-container text-center">
+                                    <!-- <a href="<?php echo URLROOT; ?>/pages/detail" class="btn view-detail-btn">View Detail</a> -->
+                                    <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>" class="btn view-detail-btn">View Detail</a>
+
+                                </div>
+                            </div>
+                            <?php } ?>
                         </div>
-                      </div>
                     </div>
-                    <div
-                      class="col-md-6 col-lg-3 wow bounceInUp"
-                      data-wow-delay="0.3s"
-                    >
-                      <div class="event-img position-relative">
-                        <img
-                          class="img-fluid rounded w-100"
-                          src="<?php echo URLROOT; ?>/images/food_3.png"
-                          alt=""
-                        />
-                        <div class="event-overlay d-flex flex-column p-4">
-                          <h4 class="me-auto">Lunch</h4>
-                          <a
-                            href="<?php echo URLROOT; ?>/images/food_4.png"
-                            data-lightbox="event-2"
-                            class="my-auto"
-                            ><i class="fas fa-search-plus text-dark fa-2x"></i
-                          ></a>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="col-md-6 col-lg-3 wow bounceInUp"
-                      data-wow-delay="0.5s"
-                    >
-                      <div class="event-img position-relative">
-                        <img
-                          class="img-fluid rounded w-100"
-                          src="<?php echo URLROOT; ?>/images/food_1.png"
-                          alt=""
-                        />
-                        <div class="event-overlay d-flex flex-column p-4">
-                          <h4 class="me-auto">Breakfast</h4>
-                          <a
-                            href="<?php echo URLROOT; ?>/images/food_1.png"
-                            data-lightbox="event-3"
-                            class="my-auto"
-                            ><i class="fas fa-search-plus text-dark fa-2x"></i
-                          ></a>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="col-md-6 col-lg-3 wow bounceInUp"
-                      data-wow-delay="0.7s"
-                    >
-                      <div class="event-img position-relative">
-                        <img
-                          class="img-fluid rounded w-100"
-                          src="<?php echo URLROOT; ?>/images/food_5.png"
-                          alt=""
-                        />
-                        <div class="event-overlay d-flex flex-column p-4">
-                          <h4 class="me-auto">Dinner</h4>
-                          <a
-                            href="<?php echo URLROOT; ?>/images/food_1.png"
-                            data-lightbox="event-4"
-                            class="my-auto"
-                            ><i class="fas fa-search-plus text-dark fa-2x"></i
-                          ></a>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="col-md-6 col-lg-3 wow bounceInUp"
-                      data-wow-delay="0.1s"
-                    >
-                      <div class="event-img position-relative">
-                        <img
-                          class="img-fluid rounded w-100"
-                          src="<?php echo URLROOT; ?>/images/food_1.png"
-                          alt=""
-                        />
-                        <div class="event-overlay d-flex flex-column p-4">
-                          <h4 class="me-auto">Breakfast</h4>
-                          <a
-                            href="<?php echo URLROOT; ?>/images/food_7.png"
-                            data-lightbox="event-5"
-                            class="my-auto"
-                            ><i class="fas fa-search-plus text-dark fa-2x"></i
-                          ></a>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="col-md-6 col-lg-3 wow bounceInUp"
-                      data-wow-delay="0.3s"
-                    >
-                      <div class="event-img position-relative">
-                        <img
-                          class="img-fluid rounded w-100"
-                          src="<?php echo URLROOT; ?>/images/food_8.png"
-                          alt=""
-                        />
-                        <div class="event-overlay d-flex flex-column p-4">
-                          <h4 class="me-auto">Lunch</h4>
-                          <a
-                            href="<?php echo URLROOT; ?>/images/food_1.png"
-                            data-lightbox="event-6"
-                            class="my-auto"
-                            ><i class="fas fa-search-plus text-dark fa-2x"></i
-                          ></a>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="col-md-6 col-lg-3 wow bounceInUp"
-                      data-wow-delay="0.5s"
-                    >
-                      <div class="event-img position-relative">
-                        <img
-                          class="img-fluid rounded w-100"
-                          src="<?php echo URLROOT; ?>/images/food_9.png"
-                          alt=""
-                        />
-                        <div class="event-overlay d-flex flex-column p-4">
-                          <h4 class="me-auto">Lunch</h4>
-                          <a
-                            href="<?php echo URLROOT; ?>/images/food_9.png"
-                            data-lightbox="event-7"
-                            class="my-auto"
-                            ><i class="fas fa-search-plus text-dark fa-2x"></i
-                          ></a>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="col-md-6 col-lg-3 wow bounceInUp"
-                      data-wow-delay="0.7s"
-                    >
-                      <div class="event-img position-relative">
-                        <img
-                          class="img-fluid rounded w-100"
-                          src="<?php echo URLROOT; ?>/images/food_1.png"
-                          alt=""
-                        />
-                        <div class="event-overlay d-flex flex-column p-4">
-                          <h4 class="me-auto">Dinner</h4>
-                          <a
-                            href="<?php echo URLROOT; ?>/images/food_10.png"
-                            data-lightbox="event-17"
-                            class="my-auto"
-                            ><i class="fas fa-search-plus text-dark fa-2x"></i
-                          ></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
+            <?php
+            // Assuming you have already fetched data from the database into $foods
+
+            // Filter the array to include only breakfast items
+            $breakfastFoods = array_filter($foods, function($food) {
+                return $food['category_name'] === 'Breakfast';
+            });
+            ?>
             <div id="tab-2" class="tab-pane fade show p-0">
-              <div class="row g-4">
-                <div class="col-lg-12">
-                  <div class="row g-4">
-                    <div class="col-md-6 col-lg-3">
-                      <div class="event-img position-relative">
-                        <img
-                          class="img-fluid rounded w-100"
-                          src="<?php echo URLROOT; ?>/images/food_12.png"
-                          alt=""
-                        />
-                        <div class="event-overlay d-flex flex-column p-4">
-                          <h4 class="me-auto">Dinner</h4>
-                          <a
-                            href="<?php echo URLROOT; ?>/images/food_11.png"
-                            data-lightbox="event-8"
-                            class="my-auto"
-                            ><i class="fas fa-search-plus text-dark fa-2x"></i
-                          ></a>
+                <div class="row g-4">
+                    <div class="col-lg-12">
+                        <div class="row g-4">
+                            <?php foreach($breakfastFoods as $food){ ?>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="event-img position-relative">
+                                    <img
+                                      class="img-fluid rounded w-100"
+                                      src="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile']; ?>"
+                                      alt="Food Image"
+                                    />
+                                    <div class="event-overlay d-flex flex-column p-4">
+                                      <h4 class="me-auto"><?php echo $food['name']; ?></h4>
+                                      <a
+                                        href="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile']; ?>"
+                                        data-lightbox="event-<?php echo $food['category_name']; ?>"
+                                        class="my-auto"
+                                        ><i class="fas fa-search-plus text-dark fa-2x"></i
+                                      ></a>
+                                      <div class="view-detail-container text-center">
+                                      <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>" class="btn view-detail-btn">View Detail</a>
+                                </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <?php } ?>
                         </div>
-                      </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
-                      <div class="event-img position-relative">
-                        <img
-                          class="img-fluid rounded w-100"
-                          src="<?php echo URLROOT; ?>/images/food_13.png"
-                          alt=""
-                        />
-                        <div class="event-overlay d-flex flex-column p-4">
-                          <h4 class="me-auto">Lunch</h4>
-                          <a
-                            href="<?php echo URLROOT; ?>/images/food_5.png"
-                            data-lightbox="event-9"
-                            class="my-auto"
-                            ><i class="fas fa-search-plus text-dark fa-2x"></i
-                          ></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
-            <div id="tab-3" class="tab-pane fade show p-0">
-              <div class="row g-4">
-                <div class="col-lg-12">
+
+
+            <?php
+
+              $lunchFoods = array_filter($foods, function($food) {
+                  return $food['category_name'] === 'Lunch';
+              });
+              ?>
+              <div id="tab-3" class="tab-pane fade show p-0">
                   <div class="row g-4">
-                    <div class="col-md-6 col-lg-3">
-                      <div class="event-img position-relative">
-                        <img
-                          class="img-fluid rounded w-100"
-                          src="<?php echo URLROOT; ?>/images/food_5.png"
-                          alt=""
-                        />
-                        <div class="event-overlay d-flex flex-column p-4">
-                          <h4 class="me-auto">Lunch</h4>
-                          <a
-                            href="<?php echo URLROOT; ?>/images/food_15.png"
-                            data-lightbox="event-10"
-                            class="my-auto"
-                            ><i class="fas fa-search-plus text-dark fa-2x"></i
-                          ></a>
-                        </div>
+                      <div class="col-lg-12">
+                          <div class="row g-4">
+                              <?php foreach($lunchFoods as $food){ ?>
+                              <div class="col-md-6 col-lg-3">
+                                  <div class="event-img position-relative">
+                                      <img
+                                        class="img-fluid rounded w-100"
+                                        src="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile']; ?>"
+                                        alt="Food Image"
+                                      />
+                                      <div class="event-overlay d-flex flex-column p-4">
+                                          <h4 class="me-auto"><?php echo $food['name']; ?></h4>
+                                          <a
+                                            href="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile']; ?>"
+                                            data-lightbox="event-<?php echo $food['category_name']; ?>"
+                                            class="my-auto"
+                                          ><i class="fas fa-search-plus text-dark fa-2x"></i></a>
+                                          <div class="view-detail-container text-center">
+                                          <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>" class="btn view-detail-btn">View Detail</a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <?php } ?>
+                          </div>
                       </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                      <div class="event-img position-relative">
-                        <img
-                          class="img-fluid rounded w-100"
-                          src="<?php echo URLROOT; ?>/images/food_5.png"
-                          alt=""
-                        />
-                        <div class="event-overlay d-flex flex-column p-4">
-                          <h4 class="me-auto">Lunch</h4>
-                          <a
-                            href="<?php echo URLROOT; ?>/images/food_13.png"
-                            data-lightbox="event-11"
-                            class="my-auto"
-                            ><i class="fas fa-search-plus text-dark fa-2x"></i
-                          ></a>
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                </div>
               </div>
-            </div>
+
+
+
+              <?php
+
+            $dinnerFoods = array_filter($foods, function($food) {
+                return $food['category_name'] === 'Dinner';
+            });
+            ?>
             <div id="tab-4" class="tab-pane fade show p-0">
-              <div class="row g-4">
-                <div class="col-lg-12">
-                  <div class="row g-4">
-                    <div class="col-md-6 col-lg-3">
-                      <div class="event-img position-relative">
-                        <img
-                          class="img-fluid rounded w-100"
-                          src="<?php echo URLROOT; ?>/images/food_5.png"
-                          alt=""
-                        />
-                        <div class="event-overlay d-flex flex-column p-4">
-                          <h4 class="me-auto">Dinner</h4>
-                          <a
-                            href="img/01.jpg"
-                            data-lightbox="event-12"
-                            class="my-auto"
-                            ><i class="fas fa-search-plus text-dark fa-2x"></i
-                          ></a>
+                <div class="row g-4">
+                    <div class="col-lg-12">
+                        <div class="row g-4">
+                            <?php foreach($dinnerFoods as $food){ ?>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="event-img position-relative">
+                                    <img
+                                      class="img-fluid rounded w-100"
+                                      src="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile']; ?>"
+                                      alt="Food Image"
+                                    />
+                                    <div class="event-overlay d-flex flex-column p-4">
+                                        <h4 class="me-auto"><?php echo $food['name']; ?></h4>
+                                        <a
+                                          href="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile']; ?>"
+                                          data-lightbox="event-<?php echo $food['category_name']; ?>"
+                                          class="my-auto"
+                                        ><i class="fas fa-search-plus text-dark fa-2x"></i></a>
+                                        <div class="view-detail-container text-center">
+                                        <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>" class="btn view-detail-btn">View Detail</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php } ?>
                         </div>
-                      </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
-                      <div class="event-img position-relative">
-                        <img
-                          class="img-fluid rounded w-100"
-                          src="<?php echo URLROOT; ?>/images/food_5.png"
-                          alt=""
-                        />
-                        <div class="event-overlay d-flex flex-column p-4">
-                          <h4 class="me-auto">Dinner</h4>
-                          <a
-                            href="img/01.jpg"
-                            data-lightbox="event-13"
-                            class="my-auto"
-                            ><i class="fas fa-search-plus text-dark fa-2x"></i
-                          ></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
-            <div id="tab-5" class="tab-pane fade show p-0">
-              <div class="row g-4">
-                <div class="col-lg-12">
-                  <div class="row g-4">
-                    <div class="col-md-6 col-lg-3">
-                      <div class="event-img position-relative">
-                        <img
-                          class="img-fluid rounded w-100"
-                          src="img/event-7.jpg"
-                          alt=""
-                        />
-                        <div class="event-overlay d-flex flex-column p-4">
-                          <h4 class="me-auto">Dinner</h4>
-                          <a
-                            href="img/01.jpg"
-                            data-lightbox="event-14"
-                            class="my-auto"
-                            ><i class="fas fa-search-plus text-dark fa-2x"></i
-                          ></a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                      <div class="event-img position-relative">
-                        <img
-                          class="img-fluid rounded w-100"
-                          src="img/event-8.jpg"
-                          alt=""
-                        />
-                        <div class="event-overlay d-flex flex-column p-4">
-                          <h4 class="me-auto">Breakfast</h4>
-                          <a
-                            href="img/01.jpg"
-                            data-lightbox="event-15"
-                            class="my-auto"
-                            ><i class="fas fa-search-plus text-dark fa-2x"></i
-                          ></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+
           </div>
         </div>
       </div>
@@ -419,3 +206,62 @@
     <!-- Events End -->
 
     <?php require_once APPROOT . '/views/inc/footer.php' ?>
+
+
+    <style>
+   .event-img {
+    position: relative;
+    width: 100%; /* Ensure the image container takes full width of its parent */
+    height: 300px; /* Set a fixed height for the image container */
+}
+
+.event-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire container without stretching */
+}
+
+.event-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.event-img:hover .event-overlay {
+    opacity: 1;
+}
+
+.event-overlay h4 {
+    margin: 0;
+}
+
+.view-detail-container {
+    margin-top: 10px; /* Adjust the spacing as needed */
+}
+
+.view-detail-btn {
+    background-color: #ff7433;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.view-detail-btn:hover {
+    background-color: #ff5522; /* Darker shade for hover effect */
+}
+
+    </style>

@@ -33,6 +33,10 @@ class CuisineController extends Controller
         if($_SERVER['REQUEST_METHOD']=='POST'){
            
             $cuisineName = $_POST['cuisineName'];
+
+            // if(empty($cuisineName)){
+
+            // }
            
             $cuisine = new CuisineModel();
             $cuisine->setCuisineName($cuisineName);
@@ -46,11 +50,38 @@ class CuisineController extends Controller
             redirect('CuisineController/viewcuisine');
         }
     }
+    // public function store() {
+    //     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    //         $name = $_POST['cuisineName'];
+            
+    //         if (empty($name)) {
+    //             $error = 'Field is required';
+    //             // Display the error message
+    //             setMessage('error', $error);
+    //             redirect('CuisineController/addcuisine');
+    //         } else {
+    //             // Check if category already exists using LIKE
+    //             $name = $this->db->columnFilter('cuisines', 'cuisineName' ,$name );
+    
+    //             if ($name) {
+    //                 // If category exists, display an error message
+    //                 setMessage('error', 'Cuisine already exists');
+    //                 redirect('CuisineController/addcuisine');
+    //             } else {
+    //                 // Create new category
+    //                 $name = new CuisineModel();
+    //                 $name->setCuisineName($name);
+                    
+    //                 $cuisineCreated = $this->db->create('category', $name->toArray());
+    
+    //                 setMessage('success', 'Add cuisine successful!');
+    //                  redirect('CuisineController/viewcuisine');
+    //             }
+    //         }
+    //     }
+    // }
 
-    // public function edit()
-    // {
-    //     $this->view('admin/cuisine/edit');
-    //  }
+    
     public function edit($id)
     {
         $cuisines = $this->db->readAll('cuisines');
@@ -63,33 +94,6 @@ class CuisineController extends Controller
         $this->view('/admin/cuisine/edit', $data);
     }
 
-
-    // public function update()
-    // {
-    //     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    //         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-    //         // $id = $_POST['id'];
-    //         $cuisineName = $_POST['cuisineName'];
-            
-           
-    //         $cuisine = new CuisineModel();
-    //         // $cuisine->setId($id);
-    //         $cuisine->setCuisineName($cuisineName);
-            
-    //      //     echo('ok');
-    //     // exit;
-    //         $isUpdated = $this->db->update('cuisines', $cuisine->getId(), $cuisine->toArray());
-    //         if ($isUpdated) {
-    //             // echo ($isUpdated);
-    //             // exit;
-    //             setMessage('success', 'cuisine update successful!');
-    //         } else {
-    //             setMessage('error', 'Failed to update cuisine.');
-    //         }
-    //         redirect('CuisineController/viewcuisine');
-    //     }
-    // }
 
 
     public function update(){
