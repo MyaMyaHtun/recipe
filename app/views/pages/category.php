@@ -5,12 +5,13 @@
 <?php $database = new Database(); ?>
 <?php $foods = $database->readAll('view_foods') ?>
 
+
 <!-- category Start -->
 <div class="container-fluid event py-6">
       <div class="container">
-        <div class="text-center wow bounceInUp" data-wow-delay="0.1s" >
+        <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
           <small
-            class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3" 
+            class="d-inline-block fw-bold text-dark text-uppercase bg-light border rounded-pill px-4 py-1 mb-3"
             >Latest Categories</small
           >
         </div>
@@ -21,38 +22,38 @@
           >
             <li class="nav-item p-2">
               <a
-                class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill active"
+                class="d-flex mx-2 py-2 border bg rounded-pill active"
                 data-bs-toggle="pill"
-                href="#tab-1"
+                href="#tab-1"  style="color:aliceblue"
               >
-                <span class="text-dark" style="width: 150px">All Category</span>
+                <span class="" style="width: 150px">All Category</span>
               </a>
             </li>
             <li class="nav-item p-2">
               <a
-                class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill"
+                class="d-flex py-2 mx-2 border bg rounded-pill"
                 data-bs-toggle="pill"
-                href="#tab-2"
+                href="#tab-2" style="color:aliceblue"
               >
-                <span class="text-dark" style="width: 150px">Breakfast</span>
+                <span class="" style="width: 150px" style="color:aliceblue">Breakfast</span>
               </a>
             </li>
             <li class="nav-item p-2">
               <a
-                class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill"
+                class="d-flex mx-2 py-2 border bg rounded-pill"
                 data-bs-toggle="pill"
-                href="#tab-3"
+                href="#tab-3" style="color:aliceblue"
               >
-                <span class="text-dark" style="width: 150px">Lunch</span>
+                <span class="" style="width: 150px" style="color:aliceblue">Lunch</span>
               </a>
             </li>
             <li class="nav-item p-2">
               <a
-                class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill"
+                class="d-flex mx-2 py-2 border bg rounded-pill"
                 data-bs-toggle="pill"
-                href="#tab-4"
+                href="#tab-4"  style="color:aliceblue"
               >
-                <span class="text-dark" style="width: 150px">Dinner</span>
+                <span class="" style="width: 150px">Dinner</span>
               </a>
             </li>
           </ul>
@@ -67,13 +68,14 @@
                                     <img class="img-fluid rounded custom-img" src="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile']; ?>" alt="Food Image" />
                                     <div class="event-overlay d-flex flex-column p-4">
                                         <h4 class="me-auto"><?php echo $food['category_name']; ?></h4>
-                                    </div>
-                                </div>
-                                <div class="view-detail-container text-center">
+                                        <div class="view-detail-container text-center">
                                     <!-- <a href="<?php echo URLROOT; ?>/pages/detail" class="btn view-detail-btn">View Detail</a> -->
                                     <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>" class="btn view-detail-btn">View Detail</a>
 
                                 </div>
+                                    </div>
+                                </div>
+                                
                             </div>
                             <?php } ?>
                         </div>
@@ -263,5 +265,13 @@
 .view-detail-btn:hover {
     background-color: #ff5522; /* Darker shade for hover effect */
 }
+
+  .bg{
+    background-color: #ff7433;
+  }
+  .bg :hover{
+    
+    color: #333; /* Text color on hover */
+  }
 
     </style>

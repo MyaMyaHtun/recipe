@@ -4,7 +4,7 @@
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
     <div class="sidebar-brand-icon rotate-n-15">
-    <i class="fa-solid fa-bowl-food"></i>
+    <i class="uil uil-crockery"></i>
     </div>
     <div class="sidebar-brand-text mx-3">Recipe Admin <sup></sup></div>
 </a>
@@ -15,7 +15,7 @@
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
     <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard/admin">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="uil uil-dashboard"></i>
         <span>Dashboard</span></a>
 </li>
 
@@ -31,7 +31,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="<?php echo URLROOT; ?>/FoodController/index" data-toggle="collapse" data-target="#collapseFood"
         aria-expanded="true" aria-controls="collapseFood">
-        <i class="fa-solid fa-pizza-slice"></i>
+        <i class="uil uil-pizza-slice"></i>
         <span>Foods</span>
     </a>
     <div id="collapseFood" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -47,7 +47,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
         aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fa-solid fa-list"></i>
+        <i class="uis uis-list-ul"></i>
         <span>Categories</span>
     </a>
     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
@@ -62,8 +62,8 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
         aria-expanded="true" aria-controls="collapseThree">
-        <i class="fa-solid fa-globe"></i>
-        <span>Cuisien</span>
+        <i class="uil uil-utensils"></i>
+        <span>Cuisine</span>
     </a>
     <div id="collapseThree" class="collapse" aria-labelledby="collapseThree"
         data-parent="#accordionSidebar">
@@ -86,7 +86,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
         aria-expanded="true" aria-controls="collapsePages">
-        <i class="fas fa-fw fa-folder"></i>
+        <i class="uil uil-folder"></i>
         <span>Pages</span>
     </a>
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -107,14 +107,14 @@
 <!-- Users -->
 <li class="nav-item">
     <a class="nav-link" href="<?php echo URLROOT; ?>/UserController/user">
-    <i class="fa-regular fa-user"></i>
+    <i class="uil uil-user" style="font-size: 15px;"></i>
         <span>Users</span></a>
 </li>
 
 <!-- Setting -->
 <li class="nav-item">
     <a class="nav-link" href="<?php echo URLROOT; ?>/settingController/setting">
-    <i class="fa-solid fa-gear"></i>
+    <i class="uil uil-setting"></i>
         <span>Settings</span></a>
 </li>
 

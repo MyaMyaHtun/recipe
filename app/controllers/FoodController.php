@@ -114,15 +114,23 @@ class FoodController extends Controller
             $step3 = $_POST['step3'];
             $tips = $_POST['tips'];
            
-            $currentImage = $_POST['imagefile'];
+            $currentImage = $_POST['imagepath'];
+            // print_r($currentImage);
+            // exit;
             $msg = "";
             $image = $_FILES['imagefile']['name'];
+            // print_r($image);
+            // exit;
             if($image){
                 if (!file_exists('food_images/')){
                     mkdir('food_images/');
                 }
-                $target = "food_images/" . basename($image);
-                if(move_uploaded_file($_FILES['imagefile']['tmp_name'],$target)){
+                $timestamp = time();
+                $image = $timestamp . basename($image);
+                // print_r( $target );
+                // exit;
+
+                if(move_uploaded_file($_FILES['imagefile']['tmp_name'],"food_images/$image")){
                     $msg = "Image uploaded successfully";
                 }else{
                     $msg = "Failed to upload image";

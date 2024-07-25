@@ -32,9 +32,9 @@
                       <td><?php echo $cuisine['cuisineName']; ?></td>
                       <td>
                         <!-- Edit Row -->
-                        <a href="<?php echo URLROOT; ?>/CuisineController/edit/<?php echo $cuisine['id']?>" class="'btn btn-success"><button class="btn btn-primary">Edit</button></a> 
+                        <a href="<?php echo URLROOT; ?>/CuisineController/edit/<?php echo $cuisine['id']?>" class="'btn btn-success"><button class="btn btn-primary"><i class="uil uil-edit"></i></button></a> 
                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal_<?php echo $cuisine['id']; ?>">
-                                Delete
+                            <i class="uil uil-trash-alt"></i>
                             </button>
                       </td>
                     </tr>

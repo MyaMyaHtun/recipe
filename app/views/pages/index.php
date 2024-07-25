@@ -4,7 +4,7 @@
   <div class="container introduction">
     <div class="row">
       <div class="left col-lg-6">
-        <h2>Don't know how to cook?</h2>
+        <h2 style="color: #ff7433;">Don't know how to cook?</h2>
 
         <p>No worries!</p>
 
@@ -12,7 +12,7 @@
 
         <p>Even if you are a beginner or an expert, just explore beautiful recipes here!</p>
 
-        <div class="get-started"><a href="<?php echo URLROOT; ?>/pages/dashboard">Get Started </a><i class="fa fa-chevron-right"></i></div>
+        <div class="get-started" style="background-color: #ff7433;"><a href="<?php echo URLROOT; ?>/pages/dashboard" style="color:aliceblue">Get Started </a><i class="fa fa-chevron-right" style="color:aliceblue"></i></div>
       </div>
 
       <div class="right col-lg-6">
@@ -80,27 +80,15 @@
 
           <div class="home-info-section-inner-title"><h4>Pizza</h4></div>
 
-          <!-- <div class="home-info-section-inner-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Mollitia, molestiae necessitatibus. Voluptas architecto, earum aut perferendis 
-            temporibus adipisci, odit id amet laborum eum quibusdam autem quaerat odio esse 
-            iste blanditiis!
-          </div> -->
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="card mb-4 shadow">
-          <img class="card-img-top mx-auto d-block" src="<?php echo URLROOT; ?>/images/mango-smoothie.jpg" alt="Mango Smoothie">
+          <img class="card-img-top mx-auto d-block" src="<?php echo URLROOT; ?>/images/food_5.png" alt="Mango Smoothie">
           
-          <div class="home-info-section-inner-title"><h4>Mango Smoothie</h4></div>
+          <div class="home-info-section-inner-title"><h4>Cheese Bread</h4></div>
 
-          <!-- <div class="home-info-section-inner-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Mollitia, molestiae necessitatibus. Voluptas architecto, earum aut perferendis 
-            temporibus adipisci, odit id amet laborum eum quibusdam autem quaerat odio esse 
-            iste blanditiis!
-          </div> -->
         </div>
       </div>
 
@@ -110,12 +98,6 @@
 
           <div class="home-info-section-inner-title"><h4>Cheese Sandwich</h4></div>
 
-          <!-- <div class="home-info-section-inner-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Mollitia, molestiae necessitatibus. Voluptas architecto, earum aut perferendis 
-            temporibus adipisci, odit id amet laborum eum quibusdam autem quaerat odio esse 
-            iste blanditiis!
-          </div> -->
         </div>
       </div>
     </div>

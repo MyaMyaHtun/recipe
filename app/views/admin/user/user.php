@@ -30,7 +30,7 @@
                       <td>
 
                       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal_<?php echo $users['id']; ?>">
-                                Delete
+                      <i class="uil uil-trash-alt"></i>
                             </button>
                         
                       <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal_<?php echo $users['id']; ?>">
@@ -61,7 +61,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Are you sure you want to delete <?php echo $users['name']; ?>?
+                    Are you sure you want to delete <b> <?php echo $users['name']; ?> </b>?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

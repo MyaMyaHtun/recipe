@@ -12,9 +12,9 @@ if ($data) {
 
             $iconColor = $data['is_saved']['is_saved'] == 1 ? '#ff7433' : '#bebebe';
         }
-       
+        
         // Split ingredients into an array
-        $ingredients = explode(', ', $data['recipe']['ingredient']);
+        $ingredients = explode(',', $data['recipe']['ingredient']);
         ?>
 
     <?php
@@ -24,9 +24,9 @@ if ($data) {
             <div class="recipe-header">
             <div class="icon-container">
                       <a href="#" id="heart-icon">
-                      <?php if ($data['user_id']) { ?>
+                      <?php if ($data['user_id']) {?>
 
-                        <i id="bookmarkIcon" class="fa-solid fa-bookmark" style="color: <?php echo $iconColor; ?>;" data-food-id="<?php echo $data['recipe']['id']; ?>" data-user-id="<?php echo $data['user_id']; ?>"></i>
+                        <i id="bookmarkIcon" class="uis uis-bookmark" style="color: <?php echo $iconColor; ?>;" data-food-id="<?php echo $data['recipe']['id']; ?>" data-user-id="<?php echo $data['user_id']; ?>"></i>
 
                           <?php } else { ?>
                             
@@ -46,7 +46,7 @@ if ($data) {
                     <h2>Ingredients</h2>
                     <ul>
                         <?php foreach ($ingredients as $ingredient) { ?>
-                            <li><?php echo $ingredient; ?></li>
+                            <li><?php echo htmlspecialchars(trim($ingredient)); ?></li>
                         <?php } ?>
                     </ul>
                 </div>
@@ -77,8 +77,8 @@ if ($data) {
 
 <script>
      $('#bookmarkIcon').on('click', function() {
-            var foodId = $(this).data('food-id');
-            var userId = $(this).data('user-id');
+            var foodId = $('#bookmarkIcon').data('food-id');
+            var userId = $('#bookmarkIcon').data('user-id');
             
             var url ="<?php echo URLROOT;?>/SaveRecipeController/store";
 

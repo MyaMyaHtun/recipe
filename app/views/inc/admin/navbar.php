@@ -5,22 +5,34 @@
 
         <!-- Sidebar Toggle (Topbar) -->
         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
+            <i class="uis uis-bars"></i>
         </button>
 
         <!-- Topbar Search -->
-        <form
+        <!-- <form method="post"
             class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
                 <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                     aria-label="Search" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="button">
+                <div class="input-group-append" >
+                    <button class="btn btn-primary" type="button" style="background-color:#FCAE1E;">
                         <i class="fas fa-search fa-sm"></i>
                     </button>
                 </div>
             </div>
-        </form>
+        </form> -->
+
+        <form method="post" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+    <div class="input-group">
+        <input type="text" id="searchInput" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" onkeyup="searchTable()">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="button" style="background-color:#FCAE1E;">
+                <i class="uil uil-search" style="font-size: 20px;"></i>
+            </button>
+        </div>
+    </div>
+</form>
+
 
         <!-- Topbar Navbar -->
         <ul class="navbar-nav ml-auto">
@@ -29,7 +41,7 @@
             <li class="nav-item dropdown no-arrow d-sm-none">
                 <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-search fa-fw"></i>
+                    <i class="uil uil-search"></i>
                 </a>
                 <!-- Dropdown - Messages -->
                 <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
@@ -41,7 +53,7 @@
                                 aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
+                                    <i class="uil uil-search"></i>
                                 </button>
                             </div>
                         </div>
@@ -53,7 +65,7 @@
             <li class="nav-item dropdown no-arrow mx-1">
                 <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-bell fa-fw"></i>
+                    <i class="uil uil-bell" style="font-size:xx-large;"></i>
                     <!-- Counter - Alerts -->
                     <span class="badge badge-danger badge-counter">3+</span>
                 </a>
@@ -104,7 +116,7 @@
             <li class="nav-item dropdown no-arrow mx-1">
                 <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-envelope fa-fw"></i>
+                    <i class="uil uil-comment-alt-message"></i>
                     <!-- Counter - Messages -->
                     <span class="badge badge-danger badge-counter">7</span>
                 </a>
@@ -181,7 +193,7 @@
                     aria-labelledby="userDropdown">
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="<?php echo URLROOT;?>/pages/home" data-toggle="modal" data-target="#logoutModal">
-                        <a href="<?php echo URLROOT;?>/pages/home" style="text-decoration:none;"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                        <a href="<?php echo URLROOT;?>/pages/home" style="text-decoration:none;"><i class="uil uil-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                         logout></a>
                         <!-- <a href="<?php echo URLROOT; ?>/controllers/dashboard/login">Logout</a> -->
                     </a>

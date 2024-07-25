@@ -23,7 +23,7 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data['totalFoods'] ?></div>
                             </div>
                             <div class="col-auto">
-                                <i class="fa-solid fa-fish fa-2x text-gray-300"></i>
+                                <i class="uil uil-pizza-slice" style="font-size: 30px; color:gray;"></i>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data['totalCategories'] ?></div>
                             </div>
                             <div class="col-auto">
-                                <i class="fa-solid fa-list fa-2x text-gray-300"></i>
+                                <i class="uis uis-list-ul" style="font-size: 30px; color:gray;"></i>
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data['totalUsers'] ?></div>
                             </div>
                             <div class="col-auto">
-                                <i class="fa-solid fa-user fa-2x text-gray-300"></i>
+                                <i class="uil uil-user" style="font-size: 30px; color:gray;"></i>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data['totalCuisines'] ?></div>
                             </div>
                             <div class="col-auto">
-                                <i class="fa fa-utensils fa-2x text-gray-300"></i>
+                                <i class="uil uil-utensils" style="font-size: 30px; color:gray;"></i>
                             </div>
                         </div>
                     </div>

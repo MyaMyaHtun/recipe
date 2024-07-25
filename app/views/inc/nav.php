@@ -9,7 +9,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span>
-        <i class="fa fa-bars" style="color:black; font-size:30px;"></i>
+        <i class="uis uis-bars" style="color:black; font-size:30px;"></i>
       </span>
     </button>
 
@@ -31,7 +31,7 @@ if (session_status() == PHP_SESSION_NONE) {
             <?php if (isset($_SESSION['user_id'])): ?>
                 <a class="nav-link" href="<?php echo URLROOT; ?>/auth/logout">Logout</a>
                 <li class="nav-item">
-            <a class="nav-link" href="<?php echo URLROOT; ?>/pages/save"><i class="fa-solid fa-bookmark" style="color:#ff7433"></i></a>
+            <a class="nav-link" href="<?php echo URLROOT; ?>/pages/save"><i class="uis uis-bookmark" style="color:#ff7433"></i></a>
             
             </li>
             <?php else: ?>

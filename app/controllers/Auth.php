@@ -116,61 +116,6 @@ public function register()
 
 
 
-// public function login()
-// {
-//     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-//         $email = $_POST['email'];
-//         // echo ($email);
-//         // exit;
-//         $password = base64_encode($_POST['password']); // Encode password for comparison
-
-//         $user = $this->db->columnFilter('users', 'email', $email);
-//         // echo '<pre>';
-//         // print_r($user);
-//         // echo '</pre>';
-//         // exit; // Stop execution to check the output
-//         if ($user) {
-//             if ($user['password'] === $password) {
-//                 // Check the user role
-//                 if ($user['role'] == 1) {
-//                     // Admin user
-//                     setMessage('success', 'Login successful ! Welcome to recipe admin dashboard.');
-//                     redirect('dashboard/admin');
-//                 } elseif ($user['role'] == 0) {
-//                     // Regular user
-//                     setMessage('success', 'Login successful ! Welcome to recipe.');
-//                     redirect('pages/dashboard');
-//                 } else {
-//                     setMessage('error', 'Invalid user role!');
-//                     redirect('pages/index');
-//                 }
-//             } else {
-//                 setMessage('error', 'Incorrect password!');
-//                 redirect('pages/login');
-//             }
-//         } else {
-//             setMessage('error', 'No user found with that email!');
-//             redirect('pages/login');
-//         }
-//     } else {
-//         $this->view('pages/login');
-//     }
-// }
-
-
-
-//     function logout($id)
-//     {
-//         // session_start();
-//         // $this->db->unsetLogin(base64_decode($_SESSION['id']));
-
-//         //$this->db->unsetLogin($this->auth->getAuthId());
-//         $this->db->unsetLogin($id);
-//         redirect('pages/login');
-//     }
-
-
-
     
 public function login()
 {
@@ -181,6 +126,7 @@ public function login()
         $user = $this->db->columnFilter('users', 'email', $email);
         if ($user) {
             if ($user['password'] === $password) {
+                   
                 // Set session variables
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['user_name'] = $user['name'];

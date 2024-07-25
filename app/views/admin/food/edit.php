@@ -69,6 +69,8 @@
 
                         <div class="mb-3">
                             <label for="image" class="form-label">Current Image :</label>
+                            <input type="hidden" name="imagepath" value="<?php echo $data['foods']['imagefile']?>">
+                            
                             <img src="<?php echo URLROOT; ?>/public/food_images/<?php echo $data['foods']['imagefile']?>" alt="food image" width="150px">
                         
                         </div>
@@ -123,14 +125,14 @@
                         <div class="mb-3">
                             <label for="step3" class="form-label">Enter Step 3:</label>
                             <textarea class="form-control" rows="3" name="step3" required>
-                            <?php echo $data['foods']['step2']?>
+                            <?php echo $data['foods']['step3']?>
                             </textarea>
                         </div>
 
                         <div class="mb-3">
                             <label for="tips" class="form-label">Write Some Tips:</label>
                             <textarea class="form-control" rows="3" name="tips" required>
-                            <?php echo $data['foods']['step2']?>
+                            <?php echo $data['foods']['tips']?>
                             </textarea>
                         </div>
                 </section>

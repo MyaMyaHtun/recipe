@@ -2,7 +2,7 @@
 <footer>
 <div class="section">
     <ul>
-        <h1>Wowfood</h1>
+        <h1 style="color:aliceblue">wowFood</h1>
         <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora hic corrupti reprehenderit impedit.</p> -->
         <div class="flex">
             <img src="<?php echo URLROOT; ?>/images/facebook_icon.png" alt="">
@@ -12,17 +12,18 @@
     </ul>
     <ul>
         <!-- <h3>Company</h3> -->
-        <p>Home</p>
-        <p>About Us</p>
-        <p>Privacy Policy</p>
+        <p style="color:aliceblue">Home</p>
+        <p style="color:aliceblue">About Us</p>
+        <p style="color:aliceblue">Privacy Policy</p>
     </ul>
     <ul>
         <!-- <h3>GET IN TOUCH</h3> -->
-        <p>+959678818461</p>
-        <p>contact@wowfood.com</p>
+        <p><a href="tel:09-678818461" style="color:aliceblue">09-678818461</a></p>
+        <p><a href="mailto:wowfood@gmail.com" style="color:aliceblue">wowfood@gmail.com</a></p>
+        <!-- <p><a href="mailto:myamyahtun.1234@gmail.com">myamyahtun.1234@gmail.com</a></p> -->
     </ul>
 </div>
-<div class="bottom">
+<div class="bottom" style="color:aliceblue">
     Copyright 2024&copy; Wowfood.com - All Right Reserved
 </div>
      </footer>

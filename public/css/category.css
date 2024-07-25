@@ -6096,9 +6096,6 @@ fieldset:disabled .btn {
 .border-start-0 {
   border-left: 0 !important;
 }
-.border-primary {
-  border-color: #d4a762 !important;
-}
 .border-secondary {
   border-color: #9a9a9a !important;
 }
@@ -6899,7 +6896,7 @@ fieldset:disabled .btn {
   background-color: #dc3545 !important;
 }
 .bg-light {
-  background-color: #fffcf8 !important;
+  background-color: #ff74ff important;
 }
 .bg-dark {
   background-color: #050709 !important;

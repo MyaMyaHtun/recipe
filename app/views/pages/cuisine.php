@@ -18,47 +18,47 @@
           >
             <li class="nav-item p-2">
               <a
-                class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill active"
+                class="d-flex mx-2 py-2 border bg rounded-pill active"
                 data-bs-toggle="pill"
-                href="#tab-1"
+                href="#tab-1" style="color:aliceblue"
               >
-                <span class="text-dark" style="width: 150px">All Cuisine</span>
+                <span class="" style="width: 150px">All Cuisine</span>
               </a>
             </li>
             <li class="nav-item p-2">
               <a
-                class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill"
+                class="d-flex py-2 mx-2 border bg rounded-pill"
                 data-bs-toggle="pill"
-                href="#tab-2"
+                href="#tab-2" style="color:aliceblue"
               >
-                <span class="text-dark" style="width: 150px">Italian Food</span>
+                <span class="" style="width: 150px">Italian Food</span>
               </a>
             </li>
             <li class="nav-item p-2">
               <a
-                class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill"
+                class="d-flex mx-2 py-2 border bg rounded-pill"
                 data-bs-toggle="pill"
-                href="#tab-3"
+                href="#tab-3" style="color:aliceblue"
               >
-                <span class="text-dark" style="width: 150px">Japanese Food</span>
+                <span class="" style="width: 150px">Japanese Food</span>
               </a>
             </li>
             <li class="nav-item p-2">
               <a
-                class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill"
+                class="d-flex mx-2 py-2 border bg rounded-pill"
                 data-bs-toggle="pill"
-                href="#tab-4"
+                href="#tab-4" style="color:aliceblue"
               >
-                <span class="text-dark" style="width: 150px">Korean Food</span>
+                <span class="" style="width: 150px">Korean Food</span>
               </a>
             </li>
             <li class="nav-item p-2">
               <a
-                class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill"
+                class="d-flex mx-2 py-2 borde bg rounded-pill"
                 data-bs-toggle="pill"
-                href="#tab-5"
+                href="#tab-5" style="color:aliceblue"
               >
-                <span class="text-dark" style="width: 150px">Burmese Food</span>
+                <span class="" style="width: 150px">Burmese Food</span>
               </a>
             </li>
           </ul>
@@ -75,11 +75,12 @@
                                     <img class="img-fluid rounded custom-img" src="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile']; ?>" alt="Food Image" />
                                     <div class="event-overlay d-flex flex-column p-4">
                                         <h4 class="me-auto"><?php echo $food['cuisine_name']; ?></h4>
-                                    </div>
-                                </div>
-                                <div class="view-detail-container text-center">
+                                        <div class="view-detail-container text-center">
                                 <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>" class="btn view-detail-btn">View Detail</a>
                                 </div>
+                                    </div>
+                                </div>
+                               
                             </div>
                             <?php } ?>
                         </div>
@@ -307,6 +308,13 @@
 .view-detail-btn:hover {
     background-color: #ff5522; /* Darker shade for hover effect */
 }
+.bg {
+    background-color: #ff7433;
+  }
+  .bg :hover{
+    
+    color: #333; /* Text color on hover */
+  }
 
 </style>
 <script>
@@ -320,4 +328,5 @@
         // Add 'active' class to the clicked tab
         element.classList.add('active');
     }
+    
 </script>

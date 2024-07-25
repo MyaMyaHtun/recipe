@@ -18,7 +18,7 @@
                     type="text"
                     class="form-control"
                     placeholder="Cuisine"
-                    name="cuisineName" required
+                    name="cuisineName" 
                   />
                   <!-- <input
                     type="text"

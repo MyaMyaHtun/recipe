@@ -39,7 +39,7 @@
             </div>
             
             <div class="holder">
-                <button type="submit">
+                <button type="submit" style="background-color:#ff7433";>
                     <span>Register</span>
                 </button>
             </div>

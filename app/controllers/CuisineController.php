@@ -29,57 +29,54 @@ class CuisineController extends Controller
 
      
 
-    public function store(){
-        if($_SERVER['REQUEST_METHOD']=='POST'){
+    // public function store(){
+    //     if($_SERVER['REQUEST_METHOD']=='POST'){
            
-            $cuisineName = $_POST['cuisineName'];
+    //         $cuisineName = $_POST['cuisineName'];
 
-            // if(empty($cuisineName)){
-
-            // }
            
-            $cuisine = new CuisineModel();
-            $cuisine->setCuisineName($cuisineName);
+    //         $cuisine = new CuisineModel();
+    //         $cuisine->setCuisineName($cuisineName);
            
             
 
-            $cuisineCreated = $this->db->create('cuisines',$cuisine->toArray());
-            // echo ($categoryCreated);
-            // exit;
-            setMessage('success', 'Add cuisine successful!');
-            redirect('CuisineController/viewcuisine');
-        }
-    }
-    // public function store() {
-    //     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    //         $name = $_POST['cuisineName'];
-            
-    //         if (empty($name)) {
-    //             $error = 'Field is required';
-    //             // Display the error message
-    //             setMessage('error', $error);
-    //             redirect('CuisineController/addcuisine');
-    //         } else {
-    //             // Check if category already exists using LIKE
-    //             $name = $this->db->columnFilter('cuisines', 'cuisineName' ,$name );
-    
-    //             if ($name) {
-    //                 // If category exists, display an error message
-    //                 setMessage('error', 'Cuisine already exists');
-    //                 redirect('CuisineController/addcuisine');
-    //             } else {
-    //                 // Create new category
-    //                 $name = new CuisineModel();
-    //                 $name->setCuisineName($name);
-                    
-    //                 $cuisineCreated = $this->db->create('category', $name->toArray());
-    
-    //                 setMessage('success', 'Add cuisine successful!');
-    //                  redirect('CuisineController/viewcuisine');
-    //             }
-    //         }
+    //         $cuisineCreated = $this->db->create('cuisines',$cuisine->toArray());
+    //         // echo ($categoryCreated);
+    //         // exit;
+    //         setMessage('success', 'Add cuisine successful!');
+    //         redirect('CuisineController/viewcuisine');
     //     }
     // }
+    public function store() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $cuisineName = $_POST['cuisineName'];
+            
+            if (empty($cuisineName)) {
+                $error = 'Field is required';
+                // Display the error message
+                setMessage('error', $error);
+                redirect('CuisineController/addcuisine');
+            } else {
+                // Check if category already exists using LIKE
+                $name = $this->db->columnFilter('cuisines', 'cuisineName' ,$cuisineName );
+    
+                if ($name) {
+                    // If category exists, display an error message
+                    setMessage('error', 'Cuisine already exists');
+                    redirect('CuisineController/addcuisine');
+                } else {
+                    // Create new category
+                    $name = new CuisineModel();
+                    $name->setCuisineName($cuisineName);
+                    
+                    $cuisineCreated = $this->db->create('cuisines', $name->toArray());
+    
+                    setMessage('success', 'Add cuisine successful!');
+                     redirect('CuisineController/viewcuisine');
+                }
+            }
+        }
+    }
 
     
     public function edit($id)

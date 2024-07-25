@@ -31,7 +31,7 @@
                       <td><?php echo $contact['email']; ?></td>
                       <td>
                         <!-- Edit Row -->
-                        <a href="<?php echo URLROOT; ?>/contactController/edit/<?php echo $contact['id']?>" class="'btn btn-success"><button class="btn btn-primary">Edit</button></a> 
+                        <a href="<?php echo URLROOT; ?>/contactController/edit/<?php echo $contact['id']?>" class="'btn btn-success"><button class="btn btn-primary"><i class="uil uil-edit"></i></button></a> 
                             
                       </td>
                     </tr>

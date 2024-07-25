@@ -20,7 +20,7 @@
         Explore our categories to uncover a world of culinary delights. From savory appetizers to decadent desserts, each category offers a diverse array of recipes to satisfy every craving and occasion. Whether you're a seasoned chef or a novice cook, our curated collection ensures there's something delicious waiting for you to discover and recreate in your kitchen.
         <span/>
         
-                    <div class="scroll-view">
+            <div class="scroll-view">
                 <?php foreach($foods as $food){ ?>
                 <div class="item">
                     <div>
@@ -55,20 +55,21 @@ $loggedIn = isset($_SESSION['user_id']); // Adjust this according to your sessio
                     <i class="fas fa-heart"></i>
                 </div> -->
                 <div class="fav-icon">
-                        <?php if ($loggedIn) { ?>
-                            <i class="fas fa-heart" style="color: red;"></i>
-                        <?php } else { ?>
-                            <a href="<?php echo URLROOT; ?>/pages/login">
-                                <i class="fas fa-heart" style="color: red;"></i>
-                            </a>
-                        <?php } ?>
-                    </div>
+                    <?php if ($loggedIn) { ?>
+                        <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>">
+                            <i class="uil uil-heart" style="color: red;"></i>
+                        </a>
+                    <?php } else { ?>
+                        <a href="<?php echo URLROOT; ?>/pages/login">
+                            <i class="uil uil-heart" style="color: red;"></i>
+                        </a>
+                    <?php } ?>
+                </div>
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $food['name'] ?></h5>
                         <p class="card-text custom-text"><?php echo $food['description'] ?></p>
                     </div>
                 </div>
-                <!-- </a> -->
             </div>
         <?php } ?>
     </div>
@@ -163,5 +164,9 @@ $loggedIn = isset($_SESSION['user_id']); // Adjust this according to your sessio
         h1 {
             animation: fadeIn 2s ease-in-out;
         }
+      
+        
+
+    
  </style>
 

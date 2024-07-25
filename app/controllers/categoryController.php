@@ -1,5 +1,6 @@
 <?php
-require_once APPROOT . '/views/inc/header.php';
+
+// require_once APPROOT . '/views/inc/header.php';
 class CategoryController extends Controller
 {
     private $db;
@@ -12,15 +13,21 @@ class CategoryController extends Controller
     }
        
     public function viewDetail(){
-        $userId = isset($_SESSION['user_id']); 
-       
+
+        $userId = 0;
+        $is_saved = 0;
         if(isset($_GET['id'])){
             $recipe = $this->db->readById('view_foods', $_GET['id']);
-            $data = ["userId" => $userId, "foodId" => $recipe['id']];
-            $is_saved = $this->db->filterByMultipleColumns('save_recipe',$data);
+            session_start();
+            if (isset($_SESSION['user_id'])){
+
+                $userId = $_SESSION['user_id'];
+                $data = ["userId" => $userId, "foodId" => $recipe['id']];
+                $is_saved = $this->db->filterByMultipleColumns('save_recipe',$data);
+            }
+           
         }
-        // 
-        // 
+        
     
         $data = [
             'recipe' => $recipe,
@@ -42,42 +49,6 @@ class CategoryController extends Controller
         $this->view('admin/category/create');
     }
      
-
-    // public function store(){
-    //     if($_SERVER['REQUEST_METHOD']=='POST'){
-           
-    //         $name = $_POST['name'];
-
-    //         if (empty($name)){
-    //             $error = "Field is required";
-    //             setMessage('error', $error);
-    //             redirect('categoryController/create');
-    //         }else{
-    //             $category = $this->db->columnFilter('categories', 'name', $name);
-    //             if($category){
-    //                 setMessage('error', 'Category already exits');
-    //                 redirect('categoryController/creat');
-    //             }else{
-    //                 $category = new CategoryModel();
-    //         $category->setName($name);
-    //         $category->setDate(date('Y-m-d H:i:s'));
-        
-    //         $categoryCreated = $this->db->create('categories',$category->toArray());
-         
-    //        if(!$categoryCreated){
-    //         setMessage('error', 'Fail to added category!');
-    //         redirect('categoryController/index');
-    //        }else{
-    //         setMessage('success', 'Add category successful!');
-    //         redirect('categoryController/index');
-    //        }
-
-    //             }
-    //         }    
-            
-    //     }
-    // }
-
 
     public function store() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -151,6 +122,51 @@ class CategoryController extends Controller
         }
     }
 
+
+    
+    // public function update() {
+    //     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    //         $id = $_POST['id'];
+    //         $name = $_POST['name'];
+    
+    //         // Check if category name already exists excluding the current category ID
+    //         $existingCategories = $this->db->columnFilter('categories', 'name', $name);
+    
+    //         $duplicateExists = false;
+    
+    //         // Ensure $existingCategories is not empty
+    //         if (!empty($existingCategories)) {
+    //             foreach ($existingCategories as $category) {
+    //                 if ($category['id'] != $id) {
+    //                     $duplicateExists = true;
+    //                     break;
+    //                 }
+    //             }
+    //         }
+    
+    //         if ($duplicateExists) {
+    //             // If category name exists, display an error message
+    //             setMessage('error', 'Category name already exists');
+    //             redirect('categoryController/edit/' . $id);
+    //         } else {
+    //             $category = new CategoryModel();
+    //             $category->setId($id);
+    //             $category->setName($name);
+    //             $category->setDate(date('Y-m-d H:i:s'));
+    
+    //             $categoryUpdated = $this->db->update('categories', $category->getId(), $category->toArray());
+    
+    //             if (!$categoryUpdated) {
+    //                 setMessage('error', 'Failed to update category!');
+    //                 redirect('categoryController/index');
+    //             } else {
+    //                 setMessage('success', 'Category updated successfully!');
+    //                 redirect('categoryController/index');
+    //             }
+    //         }
+    //     }
+    // }
+    
     public function destroy($id)
     { 
        // Decode the ID

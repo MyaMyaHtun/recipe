@@ -15,7 +15,7 @@
 <section id="food">
         <div id="food-results" class="table-responsive">
         
-            <table class="table table-hover table-bordered text-center" style="table-layout: fixed; width: 100%;">
+            <table id="foodTable" class="table table-hover table-bordered text-center" style="table-layout: fixed; width: 100%;">
                 <thead>
                     <th style="width: 200px;">Id</th>
                     <th style="width: 200px;">Name</th>
@@ -44,7 +44,7 @@
                       <td><?php echo $food['category_name']; ?></td>
                       <td><?php echo $food['cuisine_name']; ?></td>
                       <td>
-                       <img src="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile'] ?>" alt="Food Image" width="150px">
+                       <img src="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile'] ?>" alt="Food Image" width="150px" >
                     </td>
                       <td><?php echo $food['totaltime']; ?></td>
                       <td><?php echo $food['preparetime']; ?></td>
@@ -56,9 +56,9 @@
                       <td><?php echo $food['tips']; ?></td>
                       <td>
                         <!-- Edit Row -->
-                        <a href="<?php echo URLROOT; ?>/FoodController/edit/<?php echo $food['id']?>" class="'btn btn-success"><button class="btn btn-primary">Edit</button></a> 
+                        <a href="<?php echo URLROOT; ?>/FoodController/edit/<?php echo $food['id']?>" class="'btn btn-success"><button class="btn btn-primary"><i class="uil uil-edit"></i></button></a> 
                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal_<?php echo $food['id']; ?>">
-                                Delete
+                            <i class="uil uil-trash-alt"></i>
                             </button>
                       </td>
                     </tr>
@@ -93,5 +93,40 @@
 <?php endforeach; ?>
 
 <?php require_once APPROOT . '/views/inc/admin/footer.php' ?>
+
+
+<script>
+function searchTable() {
+    // Get the input field and table elements
+    var input = document.getElementById("searchInput");
+    var filter = input.value.toLowerCase();
+    var table = document.getElementById("foodTable");
+    var tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows and hide those that don't match the search query
+    for (var i = 1; i < tr.length; i++) { // Start from 1 to skip the header row
+        var tdArray = tr[i].getElementsByTagName("td");
+        var found = false;
+
+        // Check all columns in the current row
+        for (var j = 0; j < tdArray.length; j++) {
+            if (tdArray[j]) {
+                var txtValue = tdArray[j].textContent || tdArray[j].innerText;
+                if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                    found = true;
+                    break;
+                }
+            }
+        }
+
+        if (found) {
+            tr[i].style.display = "";
+        } else {
+            tr[i].style.display = "none";
+        }
+    }
+}
+</script>
+
 
 

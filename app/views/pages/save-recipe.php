@@ -2,19 +2,35 @@
 <?php require APPROOT . '/views/components/auth_message.php'; ?>
 
 <?php require_once APPROOT . '/views/inc/nav.php' ?>
+<?php $database = new Database(); ?>
+<?php $foods = $database->readAll('user_saved_recipes') ?>
+
 
 <div class="container">
     <div class="card">
-        <img src="path_to_pizza_image.jpg" alt="Pizza">
-        <button>View Detail</button>
+        <?php
+        $hasSavedRecipes = false;
+        $currentUserId = $_SESSION['user_id']; // Assuming you store the current user ID in the session
+        foreach ($foods as $food) {
+            if ($food['is_saved'] == 1 && $food['user_id'] == $currentUserId) {
+                $hasSavedRecipes = true;
+                break;
+            }
+        }
+        ?>
+        <?php if ($hasSavedRecipes) { ?>
+            <?php foreach ($foods as $food) { ?>
+                <?php if ($food['is_saved'] == 1 && $food['user_id'] == $currentUserId) { ?>
+                    <h4 class="me-auto"><?php echo htmlspecialchars($food['category_name']); ?></h4>
+                    <img class="img-fluid rounded custom-img" src="<?php echo URLROOT; ?>/public/food_images/<?php echo htmlspecialchars($food['imagefile']); ?>" alt="Food Image" />
+                    <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo htmlspecialchars($food['food_id']); ?>" class="btn view-detail-btn">View Detail</a>
+                <?php } ?>
+            <?php } ?>
+        <?php } else { ?>
+            <p>No saved recipes found.</p>
+        <?php } ?>
     </div>
-    
-
-
-
-
-
-
+</div>
 
 
 <style>
@@ -37,21 +53,5 @@
             width: 100%;
             height: auto;
         }
-        .card button {
-            background-color: #ff7433;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 10px 0;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-        .card button:hover {
-            background-color: #e36222;
-        }
+        
 </style>
