@@ -5,19 +5,43 @@
 <?php require_once APPROOT . '/views/inc/nav.php' ?>
 <?php $database = new Database(); ?>
 <?php $foods = $database->readAll('view_foods') ?>
+<h1 style="padding-top: 20px" >Welcome Cooking Recipe Information System</h1>
+<div class="container introduction">
+    <div class="row">
+      <div class="left col-lg-6">
+      <p>            </p>
+        <p>            </p>
+        <p>            </p>
+        <p>            </p>
+        <!-- <h2 style="color: #ff7433;">Welcome Cooking Recipe Information System</h2>  -->
+        <p>If you don't know how to cook,</p>
+        <p>No worries!</p>
+
+        <p>This is the perfect place to hone your cooking skills.</p>
+
+        <p>Even if you are a beginner or an expert, just explore beautiful recipes here!</p>
+
+        <div class=""></div>
+      </div>
+
+      <div class="right col-lg-6">
+        <img src="<?php echo URLROOT; ?>/images/aboutUs.jpg" class="img-fluid">
+      </div>
+    </div>
+  </div>
 
     <!-- header -->
-    <div class="head">
-        <h1>Welcome my Recipe Website</h1>
-       
-     </div>
+    <!-- <div class="head">
+        <h>Welcome Cooking Recipe Website</h>
+        <div class="container introduction">
+     </div> -->
     <!-- header -->
 
     <!-- Explore Menu Section -->
     <div class="explore-menu">
         <h1>Explore our categories</h1>
         <span width="100%">
-        Explore our categories to uncover a world of culinary delights. From savory appetizers to decadent desserts, each category offers a diverse array of recipes to satisfy every craving and occasion. Whether you're a seasoned chef or a novice cook, our curated collection ensures there's something delicious waiting for you to discover and recreate in your kitchen.
+        Explore various categories to make a world of culinary delights. Whether you're a seasoned chef or a novice cook,this system ensures there's something delicious waiting for you to discover and recreate in your kitchen.In the category, brakfast, lunch, dinner are divided into three categories.If you wants to save the recipe you likes, you have to <a href="<?php echo URLROOT; ?>/pages/login">login</a>.
         <span/>
         
             <div class="scroll-view">

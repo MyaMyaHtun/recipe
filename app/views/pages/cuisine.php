@@ -111,7 +111,7 @@
                                           href="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile']; ?>"
                                           data-lightbox="event-<?php echo $food['cuisine_name']; ?>"
                                           class="my-auto"
-                                          ><i class="fas fa-search-plus text-dark fa-2x"></i
+                                          ><i class="uil uil-search-plus text-dark fa-2x"></i
                                         ></a>
                                         <div class="view-detail-container text-center">
                                         <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>" class="btn view-detail-btn">View Detail</a>
@@ -149,7 +149,7 @@
                                         href="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile']; ?>"
                                         data-lightbox="event-<?php echo $food['cuisine_name']; ?>"
                                         class="my-auto"
-                                        ><i class="fas fa-search-plus text-dark fa-2x"></i
+                                        ><i class="uil uil-search-plus text-dark fa-2x"></i
                                       ></a>
                                       <div class="view-detail-container text-center">
                                       <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>" class="btn view-detail-btn">View Detail</a>
@@ -188,7 +188,7 @@
                                           href="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile']; ?>"
                                           data-lightbox="event-<?php echo $food['cuisine_name']; ?>"
                                           class="my-auto"
-                                          ><i class="fas fa-search-plus text-dark fa-2x"></i
+                                          ><i class="uil uil-search-plus text-dark fa-2x"></i
                                         ></a>
                                         <div class="view-detail-container text-center">
                                         <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>" class="btn view-detail-btn">View Detail</a>
@@ -225,7 +225,7 @@
                                         href="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile']; ?>"
                                         data-lightbox="event-<?php echo $food['cuisine_name']; ?>"
                                         class="my-auto"
-                                        ><i class="fas fa-search-plus text-dark fa-2x"></i
+                                        ><i class="uil uil-search-plus text-dark fa-2x"></i
                                       ></a>
                                       <div class="view-detail-container text-center">
                                       <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>" class="btn view-detail-btn">View Detail</a>

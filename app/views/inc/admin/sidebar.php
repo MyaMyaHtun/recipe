@@ -91,10 +91,8 @@
     </a>
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <!-- <a class="collapse-item" href="<?php echo URLROOT;?>/pages/login">Login</a>
-            <a class="collapse-item" href="<?php echo URLROOT;?>/pages/register">Register</a> -->
             <a class="collapse-item" href="<?php echo URLROOT; ?>/contactController/index">Contact</a>
-            <a class="collapse-item" href="#">About</a>
+            <!-- <a class="collapse-item" href="#">About</a> -->
 
             <!-- <div class="collapse-divider"></div>
             <h6 class="collapse-header">Other Pages:</h6>
@@ -112,11 +110,11 @@
 </li>
 
 <!-- Setting -->
-<li class="nav-item">
+<!-- <li class="nav-item">
     <a class="nav-link" href="<?php echo URLROOT; ?>/settingController/setting">
     <i class="uil uil-setting"></i>
         <span>Settings</span></a>
-</li>
+</li> -->
 
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">

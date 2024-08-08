@@ -12,7 +12,7 @@
         </div>
         <div id="food-results">
         <div id="food-results" class="table-responsive">
-            <table class="table table-hover table-bordered text-center">
+            <table id="foodTable" class="table table-hover table-bordered text-center">
                 <thead>
                     <th>Id</th>
                     <th>Name</th>
@@ -72,3 +72,37 @@
     </div>
 <?php endforeach; ?>
 <?php require_once APPROOT . '/views/inc/admin/footer.php' ?>
+
+
+<script>
+function searchTable() {
+    // Get the input field and table elements
+    var input = document.getElementById("searchInput");
+    var filter = input.value.toLowerCase();
+    var table = document.getElementById("foodTable");
+    var tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows and hide those that don't match the search query
+    for (var i = 1; i < tr.length; i++) { // Start from 1 to skip the header row
+        var tdArray = tr[i].getElementsByTagName("td");
+        var found = false;
+
+        // Check all columns in the current row
+        for (var j = 0; j < tdArray.length; j++) {
+            if (tdArray[j]) {
+                var txtValue = tdArray[j].textContent || tdArray[j].innerText;
+                if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                    found = true;
+                    break;
+                }
+            }
+        }
+
+        if (found) {
+            tr[i].style.display = "";
+        } else {
+            tr[i].style.display = "none";
+        }
+    }
+}
+</script>
