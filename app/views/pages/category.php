@@ -4,7 +4,6 @@
 <?php require_once APPROOT . '/views/inc/nav.php' ?>
 <?php $database = new Database(); ?>
 <?php $foods = $database->readAll('view_foods') ?>
-<?php $cuisines = $database->readAll('cuisines') ?>
 
 
 <!-- category Start -->
@@ -30,29 +29,7 @@
                 <span class="" style="width: 150px">All Category</span>
               </a>
             </li> -->
-           <li class="nav-item dropdown p-2">
-    <a
-        class="d-flex py-2 mx-2 border bg rounded-pill dropdown-toggle"
-        data-bs-toggle="dropdown"
-        href="#"
-        role="button"
-        aria-expanded="false"
-        style="color: aliceblue"
-    >
-        <span style="width: 150px">Breakfast</span>
-    </a>
-    <ul class="dropdown-menu" id="cuisine_id">
-    <?php foreach ($cuisines as $cuisine): ?>
-                                        <option value="<?php echo $cuisine['id']; ?>">
-                                            <?php echo $cuisine['cuisineName']; ?>
-                                        </option>
-                                    <?php endforeach; ?>
-    </ul>
-</li>
-
-
-
-            <!-- <li class="nav-item p-2">
+            <li class="nav-item p-2">
               <a
                 class="d-flex py-2 mx-2 border bg rounded-pill"
                 data-bs-toggle="pill"
@@ -60,8 +37,7 @@
               >
                 <span class="" style="width: 150px" style="color:aliceblue">Breakfast</span>
               </a>
-            </li> -->
-           
+            </li>
             <li class="nav-item p-2">
               <a
                 class="d-flex mx-2 py-2 border bg rounded-pill"
@@ -81,33 +57,20 @@
               </a>
             </li>
           </ul>
-          <!-- <div class="tab-content">
+          <div class="tab-content">
           <div id="tab-1" class="tab-pane fade show p-0 active">
                 <div class="row g-4">
                     <div class="col-lg-12">
                         <div class="row g-4">
-                            <?php foreach($foods as $food){ ?>
-                            <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.1s">
-                                <div class="event-img position-relative">
-                                    <img class="img-fluid rounded custom-img" src="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile']; ?>" alt="Food Image" />
-                                    <div class="event-overlay d-flex flex-column p-4">
-                                        <h4 class="me-auto"><?php echo $food['category_name']; ?></h4>
-                                        <div class="view-detail-container text-center">
-                                    
-                                    <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>" class="btn view-detail-btn">View Detail</a>
-
-                                </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <?php } ?>
+                        <img src="<?php echo URLROOT; ?>/public/images/card1.jpg">
                         </div>
                     </div>
                 </div>
             </div>
-            
             <?php
+            // Assuming you have already fetched data from the database into $foods
+
+            // Filter the array to include only breakfast items
             $breakfastFoods = array_filter($foods, function($food) {
                 return $food['category_name'] === 'Breakfast';
             });
@@ -223,7 +186,7 @@
             </div>
 
 
-          </div> -->
+          </div>
         </div>
       </div>
 </div>
@@ -297,25 +260,3 @@
   }
 
     </style>
-    <script>
-        $(document).ready(function() {
-          $('#cuisine_id').on('change', function() {
-      var categoryId = $(this).val();
-      //alert(categoryId);  // This line is just for debugging, you can remove it later.
-      var form_url = '<?php echo URLROOT; ?>/CuisineController/menu';
-
-      $.ajax({
-        url: form_url,
-        type: 'GET',
-        data: {
-          category_id: categoryId
-        }, // Pass category_id directly
-        success: function(response) {
-
-          $('#name').empty();
-          $('#name').append(response);
-        }
-      });
-    });
-  });
-    </script>

@@ -34,9 +34,10 @@ public function register()
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Check user exists
         $email = $_POST['email'];
+        
         $isUserExist = $this->db->columnFilter('users', 'email', $email);
 
-        if ($isUserExist) {
+        if ($isUserExist) {  
             setMessage('error', 'This email is already registered!');
             redirect('pages/register');
         } else {

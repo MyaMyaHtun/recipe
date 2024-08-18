@@ -53,6 +53,14 @@ class Pages extends Controller
     {
         $this->view('pages/logout');
     }
+    public function nextPage()
+    {
+        $this->view('pages/next_page');
+    }
+    public function aa()
+    {
+        $this->view('pages/aa');
+    }
 
     public function save()
     {

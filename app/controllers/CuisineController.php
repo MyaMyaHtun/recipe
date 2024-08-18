@@ -158,8 +158,7 @@ class CuisineController extends Controller
         // Redirect to the food view page
         redirect('CuisineController/viewcuisine');
     }
-    
- 
+
 
 
 }

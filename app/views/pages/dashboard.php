@@ -5,7 +5,7 @@
 <?php require_once APPROOT . '/views/inc/nav.php' ?>
 <?php $database = new Database(); ?>
 <?php $foods = $database->readAll('view_foods') ?>
-<h1 style="padding-top: 20px" >Welcome Cooking Recipe Information System</h1>
+<!-- <h1 style="padding-top: 20px" >Welcome Cooking Recipe Information System</h1>
 <div class="container introduction">
     <div class="row">
       <div class="left col-lg-6">
@@ -13,7 +13,7 @@
         <p>            </p>
         <p>            </p>
         <p>            </p>
-        <!-- <h2 style="color: #ff7433;">Welcome Cooking Recipe Information System</h2>  -->
+
         <p>If you don't know how to cook,</p>
         <p>No worries!</p>
 
@@ -28,14 +28,18 @@
         <img src="<?php echo URLROOT; ?>/images/aboutUs.jpg" class="img-fluid">
       </div>
     </div>
-  </div>
-
-    <!-- header -->
-    <!-- <div class="head">
-        <h>Welcome Cooking Recipe Website</h>
+  </div> -->
+  <div class="container introduction">
+  <div class="row">
+    </div>
+     <!-- header -->
+     <div class="head">
+        <h4  style="font-weight:bold ;font-size:45px; color:yellow">Cooking Recipe Information System</h4>
         <div class="container introduction">
-     </div> -->
+     </div>
     <!-- header -->
+    </div>
+   
 
     <!-- Explore Menu Section -->
     <div class="explore-menu">
@@ -185,7 +189,7 @@ $loggedIn = isset($_SESSION['user_id']); // Adjust this according to your sessio
             }
         }
 
-        h1 {
+        h4 {
             animation: fadeIn 2s ease-in-out;
         }
       

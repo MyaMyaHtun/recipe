@@ -19,7 +19,7 @@ if (session_status() == PHP_SESSION_NONE) {
           <a class="nav-link" href="<?php echo URLROOT; ?>/pages/dashboard">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo URLROOT; ?>/pages/category">Categories</a>
+          <a class="nav-link" href="<?php echo URLROOT; ?>/pages/aa">Categories</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo URLROOT; ?>/pages/cuisine">Cuisines</a>

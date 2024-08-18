@@ -17,13 +17,13 @@
             data-wow-delay="0.1s"
           >
             <li class="nav-item p-2">
-              <a
+              <!-- <a
                 class="d-flex mx-2 py-2 border bg rounded-pill active"
                 data-bs-toggle="pill"
                 href="#tab-1" style="color:aliceblue"
               >
                 <span class="" style="width: 150px">All Cuisine</span>
-              </a>
+              </a> -->
             </li>
             <li class="nav-item p-2">
               <a
@@ -58,7 +58,7 @@
                 data-bs-toggle="pill"
                 href="#tab-5" style="color:aliceblue"
               >
-                <span class="" style="width: 150px">Burmese Food</span>
+                <span class="" style="width: 150px">Myanmar Food</span>
               </a>
             </li>
           </ul>
@@ -204,7 +204,7 @@
 
               <?php
             $burmeseFoods = array_filter($foods, function($food) {
-                return $food['cuisine_name'] === 'Burmese Food';
+                return $food['cuisine_name'] === 'Myanmar Food';
             });
             ?>
             <div id="tab-5" class="tab-pane fade show p-0">
@@ -281,6 +281,9 @@
     opacity: 0;
     transition: opacity 0.3s;
 }
+.drop:hover {
+            background-color: rgba(0, 0, 0, 0.5); /* Darker green on hover */
+        }
 
 .event-img:hover .event-overlay {
     opacity: 1;

@@ -75,6 +75,7 @@ if ($data) {
 
 <?php require_once APPROOT . '/views/inc/footer.php' ?>
 
+
 <script>
      $('#bookmarkIcon').on('click', function() {
             var foodId = $('#bookmarkIcon').data('food-id');

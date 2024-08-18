@@ -2,11 +2,14 @@
 <?php require_once APPROOT . '/views/inc/nav.php' ?>
 
 
+
 <div class="wrapper">
     <div class="inner">
         <img src="<?php echo URLROOT; ?>/images/image-1.png" alt="" class="image-1">
-        <form method="POST" class="register-form" id="register-form" action="<?php echo URLROOT; ?>/auth/register">
-            <?php require APPROOT . '/views/components/auth_message.php'; ?>
+        <form method="POST" class="register-form" id="register-form" 
+        action="<?php echo URLROOT; ?>/auth/register">
+        <?php require APPROOT . '/views/components/auth_message.php'; ?>
+            <!-- <?php require APPROOT . '/views/components/auth_message.php'; ?> -->
             
             <h3>New Account?</h3>
 

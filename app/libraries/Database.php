@@ -180,7 +180,17 @@ class Database
        //  print_r($row);
         return ($success) ? $row : [];
     }
-
+    public function getByCategoryAndCuisine($table, $column1,$column2)
+    {
+        $stm = $this->pdo->prepare('SELECT * FROM ' . $table. ' WHERE category_name =:column1 and cuisine_name =:column2');
+        // $stm = $this->pdo->prepare('SELECT * FROM $table where category_name=$column1 and cuisine_name=$column2');
+        $stm->bindValue(':column1', $column1);
+        $stm->bindValue(':column2', $column2);
+        $success = $stm->execute();
+        $row = $stm->fetchAll(PDO::FETCH_ASSOC);
+       //  print_r($row);
+        return ($success) ? $row : [];
+    }
     // For Dashboard
     public function getTotalCount($table)
     {
