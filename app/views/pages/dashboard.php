@@ -29,7 +29,9 @@
       </div>
     </div>
   </div> -->
+  <!-- <div class="text-bg-warning p-3"><h1>Cooking Recipe Information System</h1></div> -->
   <div class="container introduction">
+    
   <div class="row">
     </div>
      <!-- header -->
@@ -82,7 +84,7 @@ $loggedIn = isset($_SESSION['user_id']); // Adjust this according to your sessio
                     <!-- <div class="fav-icon">
                     <i class="fas fa-heart"></i>
                 </div> -->
-                <div class="fav-icon">
+                <!-- <div class="fav-icon">
                     <?php if ($loggedIn) { ?>
                         <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>">
                             <i class="uil uil-heart" style="color: red;"></i>
@@ -92,7 +94,7 @@ $loggedIn = isset($_SESSION['user_id']); // Adjust this according to your sessio
                             <i class="uil uil-heart" style="color: red;"></i>
                         </a>
                     <?php } ?>
-                </div>
+                </div> -->
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $food['name'] ?></h5>
                         <p class="card-text custom-text"><?php echo $food['description'] ?></p>

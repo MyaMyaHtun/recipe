@@ -204,4 +204,39 @@
 
         </nav>
    
+<style>
+    /* Sidebar styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px; /* Adjust the width of the sidebar as needed */
+    z-index: 1000;
+    background-color: #343a40; /* Sidebar background color */
+}
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999; /* Ensure it is above other content */
+    width: 100%; /* Ensure it spans the full width */
+}
+/* Content Wrapper styling */
+#content-wrapper {
+    margin-left: 250px;  /* Adjust this value to match the sidebar width */
+    padding: 20px;  /* Optional padding for content */
+}
 
+/* Ensure content is responsive */
+@media (max-width: 768px) {
+    #content-wrapper {
+        margin-left: 0;  /* Remove the margin on smaller screens */
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;  /* Full width for the sidebar on smaller screens */
+    }
+}
+
+</style>

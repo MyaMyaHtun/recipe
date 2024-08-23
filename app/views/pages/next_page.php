@@ -72,3 +72,62 @@ function searchTable() {
     }
 }
 </script>
+<style>
+    
+.img-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.custom-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cuisine-name-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+
+.cuisine-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.event-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.event-img:hover .event-overlay {
+    opacity: 1;
+}
+
+.view-detail-btn {
+    background-color: #ff5522;
+    color: white;
+}
+
+.view-detail-btn:hover {
+    background-color: #ff7433;
+}
+</style>
+</style>

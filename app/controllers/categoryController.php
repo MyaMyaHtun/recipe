@@ -44,6 +44,7 @@ class CategoryController extends Controller
         ];
         $this->view('admin/category/index',$data);
     }
+    
 
     public function create(){
         $this->view('admin/category/create');

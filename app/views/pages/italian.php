@@ -6,88 +6,7 @@
 <?php $database = new Database(); ?>
 <?php $foods = $database->readAll('view_foods') ?>
 
-<!-- Events Start -->
-<div class="container-fluid event py-6">
-      <div class="container">
-        <div class="text-center wow bounceInUp" data-wow-delay="0.1s" >
-        </div>
-        <div class="tab-class text-center">
-          <ul
-            class="nav nav-pills d-inline-flex justify-content-center mb-5 wow bounceInUp"
-            data-wow-delay="0.1s"
-          >
-            <li class="nav-item p-2">
-              <!-- <a
-                class="d-flex mx-2 py-2 border bg rounded-pill active"
-                data-bs-toggle="pill"
-                href="#tab-1" style="color:aliceblue"
-              >
-                <span class="" style="width: 150px">All Cuisine</span>
-              </a> -->
-            </li>
-            <li class="nav-item p-2">
-              <a
-                class="d-flex py-2 mx-2 border bg rounded-pill"
-                data-bs-toggle="pill"
-                href="#tab-2" style="color:aliceblue"
-              >
-                <span class="" style="width: 150px">Italian Food</span>
-              </a>
-            </li>
-            <li class="nav-item p-2">
-              <a
-                class="d-flex mx-2 py-2 border bg rounded-pill"
-                data-bs-toggle="pill"
-                href="#tab-3" style="color:aliceblue"
-              >
-                <span class="" style="width: 150px">Japanese Food</span>
-              </a>
-            </li>
-            <li class="nav-item p-2">
-              <a
-                class="d-flex mx-2 py-2 border bg rounded-pill"
-                data-bs-toggle="pill"
-                href="#tab-4" style="color:aliceblue"
-              >
-                <span class="" style="width: 150px">Korean Food</span>
-              </a>
-            </li>
-            <li class="nav-item p-2">
-              <a
-                class="d-flex mx-2 py-2 borde bg rounded-pill"
-                data-bs-toggle="pill"
-                href="#tab-5" style="color:aliceblue"
-              >
-                <span class="" style="width: 150px">Myanmar Food</span>
-              </a>
-            </li>
-          </ul>
-          <div class="tab-content">
 
-
-          <div id="tab-1" class="tab-pane fade show p-0 active">
-                <div class="row g-4">
-                    <div class="col-lg-12">
-                        <div class="row g-4">
-                            <?php foreach($foods as $food){ ?>
-                            <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.1s">
-                                <div class="event-img position-relative">
-                                    <img class="img-fluid rounded custom-img" src="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile']; ?>" alt="Food Image" />
-                                    <div class="event-overlay d-flex flex-column p-4">
-                                        <h4 class="me-auto"><?php echo $food['name']; ?></h4>
-                                        <div class="view-detail-container text-center">
-                                <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>" class="btn view-detail-btn">View Detail</a>
-                                </div>
-                                    </div>
-                                </div>
-                               
-                            </div>
-                            <?php } ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-           
                           <?php
               $italianFoods = array_filter($foods, function($food) {
                   return $food['cuisine_name'] === 'Italian Food';
@@ -126,7 +45,7 @@
               </div>
 
 
-              <?php
+              <!-- <?php
             $japaneseFoods = array_filter($foods, function($food) {
                 return $food['cuisine_name'] === 'Japanese Food';
             });
@@ -161,11 +80,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
 
-            <?php
+            <!-- <?php
               $koreanFoods = array_filter($foods, function($food) {
                   return $food['cuisine_name'] === 'Korean Food';
               });
@@ -200,9 +119,9 @@
                           </div>
                       </div>
                   </div>
-              </div>
+              </div> -->
 
-              <?php
+              <!-- <?php
             $burmeseFoods = array_filter($foods, function($food) {
                 return $food['cuisine_name'] === 'Myanmar Food';
             });
@@ -237,7 +156,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
                         

@@ -23,6 +23,34 @@ class Pages extends Controller
     {
         $this->view('pages/category');
     }
+    public function breakfast()
+    {
+        $this->view('pages/breakfast');
+    }
+    public function lunch()
+    {
+        $this->view('pages/lunch');
+    }
+    public function dinner()
+    {
+        $this->view('pages/dinner');
+    }
+    public function italian()
+    {
+        $this->view('pages/italian');
+    }
+    public function korean()
+    {
+        $this->view('pages/korean');
+    }
+    public function japanese()
+    {
+        $this->view('pages/japanese');
+    }
+    public function myanmar()
+    {
+        $this->view('pages/myanmar');
+    }
 
     public function login()
     {

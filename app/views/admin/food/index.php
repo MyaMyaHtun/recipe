@@ -7,7 +7,7 @@
 <!-- Button trigger modal -->
 <a href="<?php echo URLROOT; ?>/foodController/create" class="'btn btn-success">
 <div  >
-  <button class="btn_box" class="col-md-6" style="background-color: #ffbe33;">Add Food</button>
+  <button class="btn_box" class="col-md-6" style="background-color: #ffbe33;">Add Recipe</button>
 </div></a>
 
 
@@ -127,6 +127,31 @@ function searchTable() {
     }
 }
 </script>
+<style>
+    #food-results {
+    max-height: 500px; /* Adjust this height as needed */
+    overflow-y: auto; /* Enables vertical scrolling */
+}
+
+#foodTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#foodTable th {
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa; /* Header background color */
+    z-index: 2; /* Ensure the header is above other content */
+}
+
+#foodTable th, #foodTable td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd; /* Optional: Border around table cells */
+}
+
+</style>
 
 
 

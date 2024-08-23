@@ -124,3 +124,31 @@
     <button class="rounded-circle border-0" id="sidebarToggle"></button>
 </div>
 </ul>
+
+<style>
+    /* Ensure the sidebar is sticky */
+.sidebar {
+    position: fixed;  /* Make the sidebar fixed */
+    top: 0;  /* Align the top of the sidebar with the top of the viewport */
+    left: 0;  /* Align the left side of the sidebar with the left of the viewport */
+    height: 100vh;  /* Make the sidebar height equal to the viewport height */
+    z-index: 1000;  /* Ensure the sidebar stays on top of other elements */
+    overflow-y: auto;  /* Allow scrolling within the sidebar */
+}
+/* Adjust the content area */
+.content {
+    margin-left: 250px;  /* Adjust this value based on the width of your sidebar */
+    padding: 20px;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative;  /* Change position to relative on smaller screens */
+        height: auto;  /* Allow the sidebar to grow with content */
+    }
+
+    .content {
+        margin-left: 0;  /* Remove the margin on smaller screens */
+    }
+}
+
+</style>
