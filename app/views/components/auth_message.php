@@ -2,6 +2,7 @@
     <div class="alert text-center alert-success" role="alert">
         <?php echo $_SESSION['success'];
         unsetMessage('success');
+        
         ?>
     </div>
 <?php } ?>

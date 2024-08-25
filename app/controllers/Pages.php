@@ -14,10 +14,10 @@ class Pages extends Controller
         // exit;
         $this->view('pages/login');
     }
-    // public function home()
-    // {
-    //     $this->view('pages/index');
-    // }
+    public function home()
+    {
+        $this->view('pages/index');
+    }
 
     public function category()
     {

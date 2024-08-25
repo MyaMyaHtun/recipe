@@ -1,106 +1,201 @@
+
 <?php require_once APPROOT . '/views/inc/header.php' ?>
+
 <?php require_once APPROOT . '/views/inc/nav.php' ?>
-  <!-- Introduction start -->
-  <div class="container introduction">
+<?php $database = new Database(); ?>
+<?php $foods = $database->readAll('view_foods') ?>
+<!-- <h1 style="padding-top: 20px" >Welcome Cooking Recipe Information System</h1>
+<div class="container introduction">
     <div class="row">
       <div class="left col-lg-6">
-        <h2 style="color: #ff7433;">Don't know how to cook?</h2>
+      <p>            </p>
+        <p>            </p>
+        <p>            </p>
+        <p>            </p>
 
+        <p>If you don't know how to cook,</p>
         <p>No worries!</p>
 
         <p>This is the perfect place to hone your cooking skills.</p>
 
         <p>Even if you are a beginner or an expert, just explore beautiful recipes here!</p>
 
-        <div class="get-started" style="background-color: #ff7433;"><a href="<?php echo URLROOT; ?>/pages/dashboard" style="color:aliceblue">Get Started </a><i class="fa fa-chevron-right" style="color:aliceblue"></i></div>
+        <div class=""></div>
       </div>
 
       <div class="right col-lg-6">
         <img src="<?php echo URLROOT; ?>/images/aboutUs.jpg" class="img-fluid">
       </div>
     </div>
-  </div>
-  <!-- Introduction end -->
-
-  <!-- Why us start-->
-  <div class="container home-info-section">
-    <div class="row">
-      <!-- <div class="home-info-section-title">Why Recipe Corner?</div> -->
-
-      <div class="col-md-4">
-        <div class="card mb-4 shadow">
-          <img class="card-img-top mx-auto d-block" src="<?php echo URLROOT; ?>/images/about1.gif" alt="Easy">
-
-          <div class="home-info-section-inner-title"><h3>Easy</h3></div>
-
-          <div class="home-info-section-inner-text">
-          Discover Easy Recipes: Effortless Dishes for Every Occasion
-          The simplicity and accessibility of the recipes featured on the website. It suggests that users will find straightforward and hassle-free cooking solutions suitable for various occasions,
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card mb-4 shadow">
-          <img class="card-img-top mx-auto d-block" src="<?php echo URLROOT; ?>/images/about2.gif" alt="Quick">
-          
-          <div class="home-info-section-inner-title"><h3>Quick</h3></div>
-
-          <div class="home-info-section-inner-text">
-          To explore a collection of recipes that are convenient and straightforward, perfect for those looking to prepare delicious meals without spending too much time in the kitchen. It highlights the ease and efficiency of the recipes, appealing to individuals seeking quick cooking solutions.
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card mb-4 shadow">
-          <img class="card-img-top mx-auto d-block" src="<?php echo URLROOT; ?>/images/about3.gif" alt="Tasty">
-
-          <div class="home-info-section-inner-title"><h3>Tasty</h3></div>
-
-          <div class="home-info-section-inner-text">
-          Highlights the delicious and appetizing nature of the recipes featured on the website. It suggests that users will find a variety of flavorful dishes that cater to different tastes and preferences, promising a culinary journey filled with mouthwatering delights and satisfying flavors.
-          </div>
-        </div>
-      </div>
+  </div> -->
+  <!-- <div class="text-bg-warning p-3"><h1>Cooking Recipe Information System</h1></div> -->
+  <div class="container introduction">
+    
+  <div class="row">
     </div>
-  </div>
-
-  <!-- Why us end -->
-
-  <!-- Best dishes just for you start -->
-  <div class="container home-info-section">
-    <div class="row">
-      <!-- <div class="home-info-section-title"><h1>Best Recipes Just for You!</h1> </div> -->
-
-      <div class="col-md-4">
-        <div class="card mb-4 shadow">
-          <img class="card-img-top mx-auto d-block" src="<?php echo URLROOT; ?>/images/pizza.jpg" alt="Pizza">
-
-          <div class="home-info-section-inner-title"><h4>Pizza</h4></div>
-
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card mb-4 shadow">
-          <img class="card-img-top mx-auto d-block" src="<?php echo URLROOT; ?>/images/food_5.png" alt="Mango Smoothie">
-          
-          <div class="home-info-section-inner-title"><h4>Cheese Bread</h4></div>
-
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card mb-4 shadow">
-          <img class="card-img-top mx-auto d-block" src="<?php echo URLROOT; ?>/images/cheese-sandwich.jpg" alt="Cheese Sandwich">
-
-          <div class="home-info-section-inner-title"><h4>Cheese Sandwich</h4></div>
-
-        </div>
-      </div>
+     <!-- header -->
+     <div class="head">
+        <h4  style="font-weight:bold ;font-size:45px; color:yellow">Cooking Recipe Information System</h4>
+        <div class="container introduction">
+     </div>
+    <!-- header -->
     </div>
-  </div>
+   
 
-<?php require_once APPROOT . '/views/inc/footer.php' ?>
+    <!-- Explore Menu Section -->
+    <div class="explore-menu">
+        <h1>Explore our categories</h1>
+        <span width="100%">
+        Explore various categories to make a world of culinary delights. Whether you're a seasoned chef or a novice cook,this system ensures there's something delicious waiting for you to discover and recreate in your kitchen.In the category, brakfast, lunch, dinner are divided into three categories.If you wants to save the recipe you likes, you have to <a href="<?php echo URLROOT; ?>/pages/login">login</a>.
+        <span/>
+        
+            <div class="scroll-view">
+                <?php foreach($foods as $food){ ?>
+                <div class="item">
+                    <div>
+                        <img src="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile'] ?>" class="custom" alt="Food Image">
+                        <p><?php echo $food['name']?></p>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+    <!-- Explore Menu Section -->
+            <?php
+                shuffle($foods);
+
+                // Limit the array to the first four items
+                $foods = array_slice($foods, 0, 8);
+            ?>
+
+<?php
+// Define $loggedIn based on your login state logic
+$loggedIn = isset($_SESSION['user_id']); // Adjust this according to your session setup
+?>
+    <!-- Top Dishes Near You -->
+    <div class="container my-5">
+    <h1 class="mb-4">Top dishes near you</h1>
+    <div class="row">
+        <?php foreach($foods as $food){ ?>
+            <div class="col-md-3">
+            <!-- <a href="<?php echo URLROOT; ?>//pages/detail?id=<?php echo $food['id']; ?>" class="text-decoration-none"> -->
+                <div class="card mb-4 custom-card">
+                    <img src="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile'] ?>" class="card-img-top custom-img" alt="Food Image">
+                    <!-- <div class="fav-icon">
+                    <i class="fas fa-heart"></i>
+                </div> -->
+                <!-- <div class="fav-icon">
+                    <?php if ($loggedIn) { ?>
+                        <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>">
+                            <i class="uil uil-heart" style="color: red;"></i>
+                        </a>
+                    <?php } else { ?>
+                        <a href="<?php echo URLROOT; ?>/pages/login">
+                            <i class="uil uil-heart" style="color: red;"></i>
+                        </a>
+                    <?php } ?>
+                </div> -->
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $food['name'] ?></h5>
+                        <p class="card-text custom-text"><?php echo $food['description'] ?></p>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+</div>
+
+
+
+ <?php require_once APPROOT . '/views/inc/footer.php' ?>
+
+ <style>
+  .custom-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-img {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.custom-text {
+    height: 100px; /* Adjust height as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+}
+.scroll-view {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+}
+
+.item {
+    flex: 0 0 auto;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.custom {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.item p {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.custom-card {
+    position: relative;
+}
+
+.fav-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red; /* Change this to any color you like */
+    font-size: 24px; /* Adjust the size as needed */
+    z-index: 10;
+    background-color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+@keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h4 {
+            animation: fadeIn 2s ease-in-out;
+        }
+      
+        
+
+    
+ </style>
+

@@ -52,7 +52,7 @@
                                         <img class="img-fluid rounded w-100 h-100 object-fit-cover" src="<?php echo URLROOT; ?>/public/food_images/<?php echo $food['imagefile']; ?>" alt="Food Image" style="height: 100%; object-fit: cover;" />
                                         <div class="fav-icon">
                                             <?php if ($loggedIn) { ?>
-                                                <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>">
+                                                <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>" title="save">
                                                     <i class="uis uis-bookmark" style="color: red;"></i>
                                                 </a>
                                             <?php } else { ?>

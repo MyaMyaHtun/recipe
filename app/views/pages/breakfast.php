@@ -152,7 +152,7 @@ $breakfastFoods = array_filter($foods, function($food) {
                             />
                             <div class="fav-icon">
                     <?php if ($loggedIn) { ?>
-                        <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>">
+                        <a href="<?php echo URLROOT; ?>/categoryController/viewDetail?id=<?php echo $food['id']; ?>" title="save">
                             <i class="uis uis-bookmark" style="color: red;"></i>
                         </a>
                     <?php } else { ?>
